@@ -55,8 +55,8 @@ English, Русский
 
 Для реализации системы, предлагается следующий стек технологий:
 
-  - React
-  - SCSS
+  - React (React-router-dom)
+  - SCSS (CSS modules)
 
 Использование Context API + React hooks (useReducer) для global state.
 
