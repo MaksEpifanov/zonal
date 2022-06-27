@@ -1,0 +1,16 @@
+.logo {
+  fill: var(--secondary-color);
+  width: 64px;
+  height: 80px;
+}
+
+@media (max-width: 700px) {
+  .logo {
+    width: 37px;
+    height: 37px;
+
+    &__words {
+      display: none;
+    }
+  }
+}

@@ -17,6 +17,9 @@
       ],
       "store/*": [
         "store/*"
+      ],
+      "assets/*": [
+        "assets/*"
       ]
     }
   }

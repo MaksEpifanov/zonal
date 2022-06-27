@@ -1,0 +1,36 @@
+:root[data-theme="light"] {
+  --background-color: linear-gradient(279.85deg, #F1ECF5 20.02%, #F3F3F3 81.32%);
+  --foreground-color: #082340;
+  --secondary-color: #6F63AD;
+}
+
+:root[data-theme="dark"] {
+  --background-color: linear-gradient(279.85deg, #212D3F 0%, #222831 100%, #374554 100%);
+  --foreground-color: #EEEEEE;
+  --secondary-color: #199399;
+}
+
+:root {
+  --active-color: #FDCA5F;
+  --grey-color: #ACAABA;
+}
+
+
+html {
+  background-image: var(--background-color);
+  color: var(--foreground-color);
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+@import 'normalize.css';

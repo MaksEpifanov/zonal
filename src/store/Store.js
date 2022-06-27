@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import reducer from './reducer';
 
 const initialState = {
+  activePage: 'home',
   theme: 'light',
   lang: 'ru',
   appData: {
@@ -17,7 +18,7 @@ const initialState = {
     },
     todo: {
       lists: [
-        { orderNum: 0, id: 0, name: 'all' },
+        { orderNum: 0, id: 0, name: 'All' },
       ],
       todos: [
         {
@@ -32,13 +33,14 @@ const Store = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const value = useMemo(() => ([state, dispatch]), [state]);
   return (
-    <Context.Provider value={value}>
+    <StoreContext.Provider value={value}>
       {children}
-    </Context.Provider>
+    </StoreContext.Provider>
   );
 };
 
-export const Context = createContext(initialState);
+export const StoreContext = createContext(initialState);
+StoreContext.displayName = 'Store';
 
 export default Store;
 
