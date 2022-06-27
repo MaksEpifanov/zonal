@@ -1,5 +1,13 @@
 .container {
   max-width: 1140px;
+  height: 100vh;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
 }
