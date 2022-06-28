@@ -1,28 +1,19 @@
-import { NavLink } from 'react-router-dom';
-
 import Logo from 'components/Logo';
+import CustomNavLink from './CustomNavLink';
 
 import style from './Header.module.scss';
 
 const Header = () => (
-  <header className={style.header}>
+  <header className={style.Header}>
     <div className={style.logo}>
       <Logo />
     </div>
     <nav className={style.nav}>
       <ul className={style.nav__list}>
-        <li className={style.nav__item}>
-          <NavLink to="/" className={style.nav__link}>Clock</NavLink>
-        </li>
-        <li className={style.header__item}>
-          <NavLink to="/stopwatch" className={style.nav__link}>Stopwatch</NavLink>
-        </li>
-        <li className={style.header__item}>
-          <NavLink to="/pomodoro" className={style.nav__link}>Pomodoro</NavLink>
-        </li>
-        <li className={style.header__item}>
-          <NavLink to="/todo" className={style.nav__link}>To Do</NavLink>
-        </li>
+        <CustomNavLink to="/">Clock</CustomNavLink>
+        <CustomNavLink to="/stopwatch">Stopwatch</CustomNavLink>
+        <CustomNavLink to="/pomodoro">Pomodoro</CustomNavLink>
+        <CustomNavLink to="/todo">To Do</CustomNavLink>
       </ul>
     </nav>
     <div className={style.headerBtns}>

@@ -1,25 +1,30 @@
 :root[data-theme="light"] {
-  --background-color: linear-gradient(279.85deg, #F1ECF5 20.02%, #F3F3F3 81.32%);
+  --background-color: #F1ECF5;
   --foreground-color: #082340;
   --secondary-color: #6F63AD;
+  --navigation-menu: #082340;
 }
 
 :root[data-theme="dark"] {
-  --background-color: linear-gradient(279.85deg, #212D3F 0%, #222831 100%, #374554 100%);
+  --background-color: #212D3F;
   --foreground-color: #EEEEEE;
   --secondary-color: #199399;
+  --navigation-menu: #393E46;
 }
 
 :root {
   --active-color: #FDCA5F;
   --grey-color: #ACAABA;
+  --main-font: 'Roboto', sans-serif;
+  --secondary-font: 'Russo One', sans-serif;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap');
 
 html {
   background-image: var(--background-color);
   color: var(--foreground-color);
-
+  font-family: var(--main-font);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
