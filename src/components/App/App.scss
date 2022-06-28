@@ -1,3 +1,6 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap');
+
 :root[data-theme="light"] {
   --background-color: #F1ECF5;
   --foreground-color: #082340;
@@ -16,30 +19,31 @@
   --active-color: #FDCA5F;
   --grey-color: #ACAABA;
   --main-font: 'Roboto', sans-serif;
-  --secondary-font: 'Russo One', sans-serif;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Russo+One&display=swap');
-
-html {
-  background-image: var(--background-color);
-  color: var(--foreground-color);
-  font-family: var(--main-font);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0
+  --second-font: 'Russo One', sans-serif;
+  --text-sm: 1rem;
+  --text-base-size: 1.5rem;
+  --text-md: 3rem;
+  --text-xl: 6rem;
 }
 
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: inherit;
-  -moz-box-sizing: inherit;
-  box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-@import 'normalize.css';
+html {
+  background: var(--background-color);
+  color: var(--foreground-color);
+
+  font-family: var(--main-font);
+  font-size: var(--text-base-size);
+
+
+}
+
+body {
+  margin: 0
+}
