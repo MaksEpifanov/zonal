@@ -35,13 +35,11 @@
 }
 
 html {
-  background: var(--background-color);
+  background-color: var(--background-color);
   color: var(--foreground-color);
 
   font-family: var(--main-font);
   font-size: var(--text-base-size);
-
-
 }
 
 body {

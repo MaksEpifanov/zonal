@@ -4,7 +4,7 @@ import { ReactComponent as StopwatchSvg } from 'assets/icons/stopwatch.svg';
 import { ReactComponent as PomodoroSvg } from 'assets/icons/pomodoro.svg';
 import { ReactComponent as TodoSvg } from 'assets/icons/todo.svg';
 import { ReactComponent as ThemeSvg } from 'assets/icons/theme.svg';
-import { ReactComponent as LangSvg } from 'assets/icons/lang.svg';
+import { ReactComponent as LangENSvg } from 'assets/icons/langEN.svg';
 import CustomNavLink from './CustomNavLink';
 
 import style from './Header.module.scss';
@@ -36,10 +36,10 @@ const Header = () => (
     </nav>
     <div className={style.toggles}>
       <button type="button" className={style.toggles__theme}>
-        <ThemeSvg className={style.toggles__themeSvg} />
+        <ThemeSvg />
       </button>
       <button type="button" className={style.toggles__lang}>
-        <LangSvg className={style.toggles__langSvg} />
+        <LangENSvg />
       </button>
     </div>
   </header>

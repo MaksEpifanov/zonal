@@ -60,24 +60,21 @@
 .toggles {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  justify-content: space-between;
+  height: 100%;
 
   &__theme,
   &__lang {
-    height: 34px;
     padding: 0;
     border: none;
     cursor: pointer;
     background-color: var(--background-color);
     color: var(--secondary-color);
-  }
-
-  &__themeSvg,
-  &__langSvg {
     fill: currentColor;
+    transition: color .4s;
+
+    &:hover {
+      color: var(--active-color);
+    }
   }
-
-  &__theme {}
-
-  &__lang {}
 }
