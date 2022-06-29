@@ -6,6 +6,7 @@
   --foreground-color: #082340;
   --secondary-color: #6F63AD;
   --navigation-menu: #082340;
+  --shadow: 5px 6px 14px rgba(0, 0, 0, 0.15)
 }
 
 :root[data-theme="dark"] {
@@ -13,6 +14,7 @@
   --foreground-color: #EEEEEE;
   --secondary-color: #199399;
   --navigation-menu: #393E46;
+  --shadow: 5px 6px 14px rgba(0, 0, 0, 0.45)
 }
 
 :root {
@@ -26,13 +28,6 @@
   --text-xl: 6rem;
 }
 
-*,
-*::before,
-*::after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 html {
   background-color: var(--background-color);
@@ -42,6 +37,18 @@ html {
   font-size: var(--text-base-size);
 
   -webkit-tap-highlight-color: transparent;
+
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {

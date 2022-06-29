@@ -5,13 +5,15 @@ import style from './Header.module.scss';
 
 const cx = classNames.bind(style);
 
-const CustomNavLink = ({ children, to }) => {
+const NavigationLink = ({ children, to }) => {
   const resolved = useResolvedPath(to);
   const match = useMatch({ path: resolved.pathname, end: true });
+
   const className = cx({
     nav__link: true,
     nav__link_active: match,
   });
+
   return (
     <li className={style.nav__item}>
       <Link to={to} className={className}>
@@ -21,9 +23,9 @@ const CustomNavLink = ({ children, to }) => {
   );
 };
 
-export default CustomNavLink;
+export default NavigationLink;
 
-CustomNavLink.propTypes = {
+NavigationLink.propTypes = {
   children: PropTypes.arrayOf(PropTypes.element).isRequired,
   to: PropTypes.string.isRequired,
 };
