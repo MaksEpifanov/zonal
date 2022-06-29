@@ -1,0 +1,10 @@
+.Footer {
+  text-align: center;
+  font-size: var(--text-sm);
+}
+
+@media screen and (max-width: 768px) {
+  .Footer {
+    display: none;
+  }
+}
