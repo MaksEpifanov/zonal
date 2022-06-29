@@ -24,6 +24,6 @@ const CustomNavLink = ({ children, to }) => {
 export default CustomNavLink;
 
 CustomNavLink.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(PropTypes.element).isRequired,
   to: PropTypes.string.isRequired,
 };

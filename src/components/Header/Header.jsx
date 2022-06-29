@@ -18,19 +18,27 @@ const Header = () => (
       <ul className={style.nav__list}>
         <CustomNavLink to="/">
           <ClockSvg className={style.nav__icon} />
-          Clock
+          <span className={style.nav__text}>
+            Clock
+          </span>
         </CustomNavLink>
         <CustomNavLink to="/stopwatch">
           <StopwatchSvg className={style.nav__icon} />
-          Stopwatch
+          <span className={style.nav__text}>
+            Stopwatch
+          </span>
         </CustomNavLink>
         <CustomNavLink to="/pomodoro">
           <PomodoroSvg className={style.nav__icon} />
-          Pomodoro
+          <span className={style.nav__text}>
+            Pomodoro
+          </span>
         </CustomNavLink>
         <CustomNavLink to="/todo">
           <TodoSvg className={style.nav__icon} />
-          To Do
+          <span className={style.nav__text}>
+            To Do
+          </span>
         </CustomNavLink>
       </ul>
     </nav>

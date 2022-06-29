@@ -40,6 +40,8 @@ html {
 
   font-family: var(--main-font);
   font-size: var(--text-base-size);
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {

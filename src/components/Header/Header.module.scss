@@ -54,6 +54,7 @@
       color: var(--active-color);
       transform: scale(1.2);
     }
+
   }
 }
 
@@ -76,5 +77,52 @@
     &:hover {
       color: var(--active-color);
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    box-shadow: none;
+    border-radius: 25px 25px 0 0;
+
+    &__list {
+      justify-content: space-around;
+    }
+
+    &__item:nth-child(3) {
+      margin-left: 4rem;
+    }
+
+    &__text {
+      display: none;
+    }
+
+    &__icon {
+      width: 1.4em;
+    }
+
+    &__link {
+      filter: drop-shadow(0 0 10px rgba(128, 128, 128, 0.372));
+
+      &_active {
+        border-bottom: none;
+        filter: drop-shadow(0px 0px 15px #FDCA5F)
+      }
+
+      &:hover:not(.nav__link_active) {
+        transform: none;
+      }
+    }
+
+  }
+
+  .toggles {
+    flex-direction: row;
+    gap: 30px;
   }
 }
