@@ -6,12 +6,14 @@ import Logo from './Logo';
 import ThemeToggle from './ThemeToggle';
 import LangToggle from './LangToggle';
 import NavigationLink from './NavigationLink';
+import CurrentPage from './CurrentPage';
 
 import style from './Header.module.scss';
 
 const Header = () => (
   <header className={style.Header}>
     <Logo />
+    <CurrentPage className={style.page} />
     <nav className={style.nav}>
       <ul className={style.nav__list}>
         <NavigationLink to="/">

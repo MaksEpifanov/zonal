@@ -5,6 +5,24 @@
   gap: 30px;
 }
 
+.logo {
+  width: 64px;
+  height: 80px;
+
+  &__desktop,
+  &__mobile {
+    fill: var(--secondary-color);
+  }
+
+  &__mobile {
+    display: none;
+  }
+}
+
+.page {
+  display: none;
+}
+
 .nav {
   flex-grow: 1;
   background-color: var(--navigation-menu);
@@ -81,6 +99,32 @@
 }
 
 @media screen and (max-width: 768px) {
+  .logo {
+    width: 37px;
+    height: 37px;
+
+    &__desktop,
+    &__mobile {
+      fill: var(--secondary-color);
+    }
+
+    &__mobile {
+      display: block;
+    }
+
+    &__desktop {
+      display: none;
+    }
+  }
+
+  .page {
+    display: block;
+    font-weight: bold;
+    margin: 0;
+
+    flex-grow: 1;
+  }
+
   .nav {
     width: 100%;
     position: fixed;
