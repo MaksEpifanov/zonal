@@ -7,7 +7,14 @@ const initialState = {
   theme: 'light',
   lang: 'ru',
   appData: {
-    clock: ['msc'],
+    cities: [
+      {
+        id: 1, city: 'Moscow', timeZone: 3, active: true,
+      },
+      {
+        id: 3, city: 'New York', timeZone: -4, active: false,
+      },
+    ],
     stopwatch: [
       { total: '0', lap: '0' },
     ],

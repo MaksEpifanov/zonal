@@ -3,7 +3,7 @@ export const addCity = (city) => ({
   payload: city,
 });
 
-export const deleteCity = (city) => ({
+export const deleteCity = (id) => ({
   type: 'DELETE_CITY',
-  payload: city,
+  payload: id,
 });
