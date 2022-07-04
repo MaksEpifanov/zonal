@@ -1,17 +1,48 @@
-.AnalogClock {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  position: relative;
-  z-index: 100;
+:root[data-theme="light"] {
+  --clock-background: var(--background-color);
+  --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.15), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
+  --circle-md-shadow: 0px 4px 28px -11px rgba(0, 0, 0, 0.25), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
+  --circle-sm-shadow: 11px 2px 38px -2px rgba(0, 0, 0, 0.1);
 }
 
-.time {
-  width: 200px;
-  height: 200px;
+:root[data-theme="dark"] {
+  --clock-background: var(--navigation-menu);
+  --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.5), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
+  --circle-md-shadow: 0px 4px 38px -18px rgba(0, 0, 0, 0.45), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
+  --circle-sm-shadow: 11px 2px 48px -11px rgba(0, 0, 0, 0.45);
+}
+
+.AnalogClock {
+  width: 330px;
+  height: 330px;
   border-radius: 50%;
-  background: white;
   position: relative;
+  background: var(--clock-background);
+  box-shadow: var(--clock-shadow);
+
+  .circle-md {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: var(--circle-md-shadow);
+  }
+
+  .circle-sm {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    box-shadow: var(--circle-sm-shadow)
+  }
 
   .hand {
     position: absolute;
@@ -21,20 +52,18 @@
     transform-origin: 50% 0;
 
     &.seconds {
-      height: 90px;
-      width: 2px;
-      background-color: red;
-      box-shadow: -1px 0 1px black;
-      border-bottom-right-radius: 50%;
-      border-bottom-left-radius: 50%;
+      height: 134px;
+      width: 3px;
+      border-radius: 45px;
+
+      background-color: var(--secondary-color);
 
       &:after {
         position: absolute;
         content: "";
-        background-color: green;
-        box-shadow: 1px 0 3px black;
-        width: 10px;
-        height: 10px;
+        background-color: var(--secondary-color);
+        width: 15px;
+        height: 15px;
         border-radius: 50%;
         top: 0;
         left: 50%;
@@ -43,67 +72,37 @@
     }
 
     &.minutes {
-      height: 80px;
-      width: 6px;
-      background-color: grey;
-      box-shadow: inset 0 2px 5px black;
-      border-bottom-right-radius: 50%;
-      border-bottom-left-radius: 50%;
+      height: 97px;
+      width: 5px;
+      border-radius: 45px;
+      background-color: var(--foreground-color);
 
-      &:before {
-        content: "";
-        position: absolute;
-        width: 3px;
-        height: 60px;
-        top: 15%;
-        left: 0;
-        transform: translate3d(50%, -15%, 0);
-        background-color: black;
-        border-bottom-right-radius: 40%;
-        border-bottom-left-radius: 40%;
-      }
     }
 
     &.hours {
-      height: 60px;
-      width: 8px;
-      background-color: grey;
-      box-shadow: inset 0 2px 5px black;
-      border-bottom-right-radius: 50%;
-      border-bottom-left-radius: 50%;
-
-      &:before {
-        content: "";
-        position: absolute;
-        width: 4px;
-        height: 35px;
-        top: 15%;
-        left: 0;
-        transform: translate3d(50%, -15%, 0);
-        background-color: black;
-        border-bottom-right-radius: 40%;
-        border-bottom-left-radius: 40%;
-      }
+      height: 66px;
+      width: 6px;
+      border-radius: 45px;
+      background-color: var(--active-color);
     }
   }
-}
 
-.hour-lines {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-}
+  .hour-lines {
+    position: absolute;
+    left: 50%;
+    top: 50%;
 
-.hour-line {
-  position: absolute;
-  background: var(--foreground-color);
-  height: 5px;
-  width: 2px;
-  border-radius: 50%;
+    .hour-line {
+      position: absolute;
+      background: var(--foreground-color);
+      height: 5px;
+      width: 3px;
 
-  @for $i from 1 through 12 {
-    &:nth-of-type(#{$i}) {
-      transform: translate(-50%, -50%) rotate(($i - 1) * 30deg) translateY(84px);
+      @for $i from 1 through 12 {
+        &:nth-of-type(#{$i}) {
+          transform: translate(-50%, -50%) rotate(($i - 1) * 30deg) translateY(144px);
+        }
+      }
     }
   }
 }

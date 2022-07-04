@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import AnalogClock from './AnalogClock';
+import DigitClock from './DigitClock';
 import style from './Clock.module.scss';
 
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
@@ -24,14 +25,8 @@ const Clock = ({ timeZone }) => {
 
   return (
     <div className={style.Clock}>
-      <div className="digit-clock">
-        {clock.hours}
-        :
-        {clock.minutes}
-        :
-        {clock.seconds}
-      </div>
-      <div className="analog-clock"><AnalogClock clock={clock} /></div>
+      <DigitClock clock={clock} />
+      <AnalogClock clock={clock} />
     </div>
   );
 };

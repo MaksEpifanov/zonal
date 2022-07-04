@@ -5,19 +5,19 @@ const AnalogClock = ({ clock }) => {
   const { hours, minutes, seconds } = clock;
   return (
     <div className={styles.AnalogClock}>
-      <div className={styles.time}>
-        <div className={styles['hour-lines']}>
-          {Array(12)
-            .fill()
-            .map((el, i) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div className={styles['hour-line']} key={i} />
-            ))}
-        </div>
-        <ClockHand name="hours" rotate={hours * 30 + 180} />
-        <ClockHand name="minutes" rotate={minutes * 6 + 180} />
-        <ClockHand name="seconds" rotate={seconds * 6 + 180} />
+      <div className={styles['circle-md']} />
+      <div className={styles['circle-sm']} />
+      <div className={styles['hour-lines']}>
+        {Array(12)
+          .fill()
+          .map((el, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className={styles['hour-line']} key={i} />
+          ))}
       </div>
+      <ClockHand name="hours" rotate={hours * 30 + 180} />
+      <ClockHand name="minutes" rotate={minutes * 6 + 180} />
+      <ClockHand name="seconds" rotate={seconds * 6 + 180} />
     </div>
   );
 };
