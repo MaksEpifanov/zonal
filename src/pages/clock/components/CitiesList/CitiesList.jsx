@@ -1,4 +1,7 @@
 import useClock from 'pages/clock/hooks/useClock';
+
+import { Buttons } from 'common/components';
+
 import styles from './CitiesList.module.scss';
 
 // const addCitiesList = [
@@ -9,11 +12,20 @@ import styles from './CitiesList.module.scss';
 // ];
 
 const CitiesList = () => {
-  const [cities] = useClock();
+  const [cities, , deleteCity] = useClock();
   const [activeCity, setActiveCity] = useClock('active');
 
-  const citiesList = cities.map((city) => <button type="button" key={city.id} onClick={() => setActiveCity(city)}>{city.city}</button>);
-  console.log(activeCity);
+  const citiesList = cities.map((city) => (
+    <Buttons
+      key={city.id}
+      isItem
+      onClick={() => setActiveCity(city)}
+      onDelete={() => deleteCity(city.id)}
+      active={activeCity.id === city.id}
+    >
+      {city.city.toUpperCase()}
+    </Buttons>
+  ));
 
   return (
     <div className={styles.CitiesList}>

@@ -1,15 +1,19 @@
 :root[data-theme="light"] {
-  --clock-background: var(--background-color);
-  --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.15), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
-  --circle-md-shadow: 0px 4px 28px -11px rgba(0, 0, 0, 0.25), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
-  --circle-sm-shadow: 11px 2px 38px -2px rgba(0, 0, 0, 0.1);
+  .AnalogClock {
+    --clock-background: var(--background-color);
+    --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.15), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
+    --circle-md-shadow: 0px 4px 28px -11px rgba(0, 0, 0, 0.25), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
+    --circle-sm-shadow: 11px 2px 38px -2px rgba(0, 0, 0, 0.1);
+  }
 }
 
 :root[data-theme="dark"] {
-  --clock-background: var(--navigation-menu);
-  --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.5), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
-  --circle-md-shadow: 0px 4px 38px -18px rgba(0, 0, 0, 0.45), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
-  --circle-sm-shadow: 11px 2px 48px -11px rgba(0, 0, 0, 0.45);
+  .AnalogClock {
+    --clock-background: var(--navigation-menu);
+    --clock-shadow: 11px 8px 30px rgba(0, 0, 0, 0.5), inset 0px 0px 23px rgba(0, 0, 0, 0.05);
+    --circle-md-shadow: 0px 4px 38px -18px rgba(0, 0, 0, 0.45), -11px -6px 14px -14px rgba(0, 0, 0, 0.1);
+    --circle-sm-shadow: 11px 2px 48px -11px rgba(0, 0, 0, 0.45);
+  }
 }
 
 .AnalogClock {

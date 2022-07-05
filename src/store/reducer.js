@@ -21,6 +21,15 @@ const reducer = (state, action) => {
         },
       };
     }
+    case 'DELETE_CITY': {
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          citiesList: state.clock.citiesList.filter((city) => city.id !== action.payload),
+        },
+      };
+    }
     default: return state;
   }
 };

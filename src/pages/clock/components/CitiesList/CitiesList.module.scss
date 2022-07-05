@@ -1,4 +1,20 @@
 .CitiesList {
+  padding: 15px;
+
   display: flex;
   flex-direction: column;
+  gap: 30px;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.CitiesList::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .CitiesList {
+    flex-direction: row;
+  }
 }

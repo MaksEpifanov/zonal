@@ -1,1 +1,86 @@
-.Buttons {}
+:root[data-theme="light"] {
+  .Buttons {
+    --btn-text-active: var(--foreground-color);
+  }
+}
+
+:root[data-theme="dark"] {
+  .Buttons {
+    --btn-text-active: var(--background-color);
+  }
+}
+
+.Buttons {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .btn {
+      transform: translateX(-5px);
+    }
+
+    .btn__delete {
+      opacity: 1;
+      right: -10px;
+    }
+  }
+
+  .btn {
+    width: 200px;
+    height: 62px;
+    padding: 0 15px;
+    border: none;
+    cursor: pointer;
+
+    font-family: var(--main-font);
+    font-size: var(--text-base-size);
+    font-weight: 700;
+    color: var(--foreground-color);
+
+    transition: transform .4s ease-out;
+    -moz-transition: transform .4s ease-out;
+    -webkit-transition: transform .4s ease-out;
+    -o-transition: transform .4s ease-out;
+
+    &__delete {
+      height: 32px;
+      width: 32px;
+
+      opacity: 0;
+      position: absolute;
+      right: 0;
+
+      border-radius: 50%;
+      outline: 3px solid var(--foreground-color);
+      cursor: pointer;
+
+      fill: black;
+      transition: opacity .4s ease-out, right 1s;
+      -moz-transition: opacity .4s ease-out, right 1s;
+      -webkit-transition: opacity .4s ease-out, right 1s;
+      -o-transition: opacity .4s ease-out, right 1s;
+
+      &:hover {
+        fill: var(--secondary-color);
+      }
+    }
+
+    &_isItem {
+      box-shadow: var(--shadow);
+      border-radius: 15px;
+      background-color: var(--background-color);
+
+      &_active {
+        background-color: var(--active-color);
+        color: var(--btn-text-active)
+      }
+    }
+
+    &_isPrimary {
+      color: red
+    }
+
+  }
+}
