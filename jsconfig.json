@@ -3,11 +3,11 @@
     "jsx": "react",
     "baseUrl": "src",
     "paths": {
-      "components/*": [
-        "components/*"
+      "assets/*": [
+        "assets/*"
       ],
-      "hooks/*": [
-        "hooks/*"
+      "common/*": [
+        "common/*"
       ],
       "pages/*": [
         "pages/*"
@@ -17,9 +17,6 @@
       ],
       "store/*": [
         "store/*"
-      ],
-      "assets/*": [
-        "assets/*"
       ]
     }
   }

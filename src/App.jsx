@@ -1,10 +1,10 @@
 import { useEffect, useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Layout from 'components/Layout';
-import ClockPage from 'pages/ClockPage';
-import StopwatchPage from 'pages/StopwatchPage';
-import PomodoroPage from 'pages/PomodoroPage';
-import TodoPage from 'pages/TodoPage';
+
+import { Layout } from 'common/components';
+import {
+  ClockPage, StopwatchPage, PomodoroPage, TodoPage,
+} from 'pages';
 
 import { StoreContext } from 'store/Store';
 

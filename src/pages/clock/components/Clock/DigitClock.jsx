@@ -5,9 +5,7 @@ const DigitClock = ({ clock }) => {
   const { hours, minutes } = clock;
   return (
     <div className={styles.DigitClock}>
-      {hours}
-      :
-      {minutes}
+      {`${hours}:${minutes}`}
     </div>
   );
 };

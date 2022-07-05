@@ -1,22 +1,22 @@
-import { addCity, deleteCity } from './clock';
-import { startStopwatch, resetStopwatch, splitStopwatch } from './stopwatch';
-import { startPomodoro, stopPomodoro, nextPomodoro } from './pomodoro';
+import { addCityAction, deleteCityAction, changeActiveCityAction } from './clock';
+import { startStopwatchAction, resetStopwatchAction, splitStopwatchAction } from './stopwatch';
+import { startPomodoroAction, stopPomodoroAction, nextPomodoroAction } from './pomodoro';
 import {
-  addTodo, deleteTodo, addList, deleteList, completeTodo,
+  addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
 } from './todo';
 
-const changeTheme = () => ({
+const changeThemeAction = () => ({
   type: 'TOGGLE_THEME',
 });
 
-const changeLang = () => ({
+const changeLangAction = () => ({
   type: 'TOGGLE_LANG',
 });
 
 export {
-  changeLang, changeTheme,
-  addCity, deleteCity,
-  startStopwatch, resetStopwatch, splitStopwatch,
-  startPomodoro, stopPomodoro, nextPomodoro,
-  addTodo, deleteTodo, addList, deleteList, completeTodo,
+  changeLangAction, changeThemeAction,
+  addCityAction, deleteCityAction, changeActiveCityAction,
+  startStopwatchAction, resetStopwatchAction, splitStopwatchAction,
+  startPomodoroAction, stopPomodoroAction, nextPomodoroAction,
+  addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
 };

@@ -9,8 +9,12 @@
   gap: 40px;
 }
 
-
-
 .main {
   flex-grow: 1;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    gap: 15px
+  }
 }

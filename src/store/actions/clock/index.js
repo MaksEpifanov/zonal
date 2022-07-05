@@ -1,9 +1,14 @@
-export const addCity = (city) => ({
+export const addCityAction = (city) => ({
   type: 'ADD_CITY',
   payload: city,
 });
 
-export const deleteCity = (id) => ({
+export const deleteCityAction = (id) => ({
   type: 'DELETE_CITY',
   payload: id,
+});
+
+export const changeActiveCityAction = (city) => ({
+  type: 'CHANGE_ACTIVE_CITY',
+  payload: city,
 });

@@ -1,0 +1,12 @@
+.ClockPage {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .ClockPage {
+    flex-direction: column-reverse;
+    gap: 5px;
+  }
+}

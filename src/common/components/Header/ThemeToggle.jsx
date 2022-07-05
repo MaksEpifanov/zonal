@@ -1,4 +1,4 @@
-import useTheme from 'hooks/useTheme';
+import useTheme from 'common/hooks/useTheme';
 import { ReactComponent as ThemeSvgLight } from 'assets/icons/theme-light.svg';
 import { ReactComponent as ThemeSvgDark } from 'assets/icons/theme-dark.svg';
 import PropTypes from 'prop-types';

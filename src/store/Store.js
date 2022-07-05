@@ -3,36 +3,38 @@ import PropTypes from 'prop-types';
 import reducer from './reducer';
 
 const initialState = {
-  activePage: 'home',
   theme: 'light',
   lang: 'ru',
-  appData: {
-    cities: [
+  clock: {
+    activeCity: {
+      id: 1, city: 'Moscow', timeZone: 3,
+    },
+    citiesList: [
       {
-        id: 1, city: 'Moscow', timeZone: 3, active: true,
+        id: 1, city: 'Moscow', timeZone: 3,
       },
       {
-        id: 3, city: 'New York', timeZone: -4, active: false,
+        id: 3, city: 'New York', timeZone: -4,
       },
     ],
-    stopwatch: [
-      { total: '0', lap: '0' },
+  },
+  stopwatch: [
+    { total: '0', lap: '0' },
+  ],
+  pomodoro: {
+    time: '25:00',
+    isFocus: true,
+    lap: 0,
+  },
+  todo: {
+    lists: [
+      { orderNum: 0, id: 0, name: 'All' },
     ],
-    pomodoro: {
-      time: '25:00',
-      isFocus: true,
-      lap: 0,
-    },
-    todo: {
-      lists: [
-        { orderNum: 0, id: 0, name: 'All' },
-      ],
-      todos: [
-        {
-          orderNum: 0, idList: 0, id: 0, isCompleted: false, taks: 'Example todo',
-        },
-      ],
-    },
+    todos: [
+      {
+        orderNum: 0, idList: 0, id: 0, isCompleted: false, taks: 'Example todo',
+      },
+    ],
   },
 };
 

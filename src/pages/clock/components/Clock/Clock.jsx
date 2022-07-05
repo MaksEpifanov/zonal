@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import useClock from 'pages/clock/hooks/useClock';
+
 import AnalogClock from './AnalogClock';
 import DigitClock from './DigitClock';
+
 import style from './Clock.module.scss';
 
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
-const Clock = ({ timeZone }) => {
+const Clock = () => {
   const [clock, setClock] = useState({ hours: 0, minutes: 0, seconds: 0 });
+  const [{ timeZone = 0 }] = useClock('active');
 
   function handleDate() {
     const date = new Date();
@@ -32,11 +35,3 @@ const Clock = ({ timeZone }) => {
 };
 
 export default Clock;
-
-Clock.propTypes = {
-  timeZone: PropTypes.number,
-};
-
-Clock.defaultProps = {
-  timeZone: 0,
-};

@@ -1,11 +1,11 @@
-export const startPomodoro = () => ({
+export const startPomodoroAction = () => ({
   type: 'START_POMODORO',
 });
 
-export const nextPomodoro = () => ({
+export const nextPomodoroAction = () => ({
   type: 'NEXT_POMODORO',
 });
 
-export const stopPomodoro = () => ({
+export const stopPomodoroAction = () => ({
   type: 'STOP_POMODORO',
 });

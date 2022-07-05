@@ -12,6 +12,15 @@ const reducer = (state, action) => {
         lang: state.lang === 'ru' ? 'en' : 'ru',
       };
     }
+    case 'CHANGE_ACTIVE_CITY': {
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          activeCity: action.payload,
+        },
+      };
+    }
     default: return state;
   }
 };
