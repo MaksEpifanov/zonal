@@ -2,6 +2,12 @@
   height: 100%;
   display: flex;
   justify-content: space-evenly;
+
+  .cities {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media only screen and (max-width: 768px) {

@@ -14,8 +14,27 @@ const initialState = {
         id: 1, city: 'Moscow', timeZone: 3,
       },
       {
-        id: 3, city: 'New York', timeZone: -4,
+        id: 2, city: 'New York', timeZone: -4,
       },
+      {
+        id: 3, city: 'Tokyo', timeZone: 9,
+      },
+      {
+        id: 4, city: 'London', timeZone: 1,
+      },
+      {
+        id: 5, city: 'Los Angeles', timeZone: -7,
+      },
+      {
+        id: 6, city: 'Samara', timeZone: 4,
+      },
+      {
+        id: 7, city: 'Samara', timeZone: 4,
+      },
+      {
+        id: 8, city: 'Samara', timeZone: 4,
+      },
+
     ],
   },
   stopwatch: [

@@ -134,6 +134,8 @@
     box-shadow: none;
     border-radius: 25px 25px 0 0;
 
+    z-index: 10;
+
     &__list {
       justify-content: space-around;
     }

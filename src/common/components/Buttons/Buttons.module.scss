@@ -1,12 +1,18 @@
 :root[data-theme="light"] {
   .Buttons {
     --btn-text-active: var(--foreground-color);
+    --background: linear-gradient(325.94deg, #F1ECF5 20.02%, #F3F3F3 81.32%);
+    --primary-background: linear-gradient(319.3deg, #6F63AD 7.43%, rgba(111, 99, 173, 0.73) 85.1%);
+    --primary-box-shadow: 0px 0px 17px var(--secondary-color);
   }
 }
 
 :root[data-theme="dark"] {
   .Buttons {
     --btn-text-active: var(--background-color);
+    --background: linear-gradient(279.85deg, #212D3F 0%, #222831 100%, #374554 100%);
+    --primary-background: linear-gradient(281.43deg, #00ADB5 6.48%, #199399 85.33%);
+    --primary-box-shadow: 0px 0px 17px var(--secondary-color);
   }
 }
 
@@ -16,33 +22,109 @@
   display: flex;
   align-items: center;
 
+  cursor: pointer;
+
   &:hover {
     .btn {
-      transform: translateX(-5px);
-    }
 
-    .btn__delete {
-      opacity: 1;
-      right: -10px;
+      &:not(&__item) {
+        border: 4px solid var(--active-color);
+      }
+
+      &__icon {
+        border: 4px solid var(--active-color);
+      }
+
+      &__item {
+        transform: translateX(-5px);
+      }
+
+      &__delete {
+        opacity: 1;
+        right: -10px;
+      }
     }
   }
 
   .btn {
-    width: 200px;
-    height: 62px;
+    width: 100%;
+    min-width: 180px;
+    height: 56px;
     padding: 0 15px;
-    border: none;
-    cursor: pointer;
+    border: 0px solid var(--active-color);
+    cursor: inherit;
+    border-radius: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     font-family: var(--main-font);
     font-size: var(--text-base-size);
     font-weight: 700;
+    background: var(--background);
     color: var(--foreground-color);
+    box-shadow: var(--shadow);
 
-    transition: transform .4s ease-out;
-    -moz-transition: transform .4s ease-out;
-    -webkit-transition: transform .4s ease-out;
-    -o-transition: transform .4s ease-out;
+    transition: transform .4s ease-out, border .3s;
+    -moz-transition: transform .4s ease-out, border .3s;
+    -webkit-transition: transform .4s ease-out, border .3s;
+    -o-transition: transform .4s ease-out, border .3s;
+
+    &__icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 0px solid var(--active-color);
+      padding: 10px;
+      position: absolute;
+      left: 0;
+
+      background: var(--background);
+      box-shadow: var(--shadow);
+
+      cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      transition: border .3s;
+
+      svg {
+        height: 20px;
+        width: 20px;
+        fill: var(--foreground-color);
+      }
+    }
+
+    &__primary {
+      background: var(--primary-background);
+      color: white;
+
+      ~.btn__icon {
+        background: var(--primary-background);
+        box-shadow: var(--primary-box-shadow);
+
+        svg {
+          fill: white;
+        }
+      }
+    }
+
+
+    &__item {
+      border-radius: 15px;
+
+      &_active {
+        background: var(--active-color);
+        color: var(--btn-text-active)
+      }
+    }
 
     &__delete {
       height: 32px;
@@ -66,21 +148,65 @@
         fill: var(--secondary-color);
       }
     }
+  }
+}
 
-    &_isItem {
-      box-shadow: var(--shadow);
-      border-radius: 15px;
-      background-color: var(--background-color);
+@media only screen and (max-width: 768px) {
+  .Buttons {
+    .btn {
+      padding: 0 20px;
+      font-size: 18px;
 
-      &_active {
-        background-color: var(--active-color);
-        color: var(--btn-text-active)
+      &:not(&__item) {
+        display: none;
+      }
+
+      &__primary {
+        ~.btn__icon {
+          width: 70px;
+          height: 70px;
+          position: fixed;
+          bottom: calc(90px - 35px);
+          left: calc(50% - 35px);
+          z-index: 11;
+
+          background-color: white;
+          box-shadow: none;
+          border: 6px solid var(--background-color);
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border-top-right-radius: 20px;
+            box-shadow: 0 -10px 0 0 var(--background-color);
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            border-top-left-radius: 20px;
+            box-shadow: 0 -10px 0 0 var(--background-color);
+          }
+        }
       }
     }
 
-    &_isPrimary {
-      color: red
+    &:first-child .btn__item {
+      margin-left: 50px;
     }
 
+    &:last-child .btn__item {
+      margin-right: 50px;
+    }
   }
 }

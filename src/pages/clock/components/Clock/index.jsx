@@ -4,7 +4,7 @@ import useClock from 'pages/clock/hooks/useClock';
 import AnalogClock from './AnalogClock';
 import DigitClock from './DigitClock';
 
-import style from './Clock.module.scss';
+import style from './index.module.scss';
 
 const formatTime = (time) => (time < 10 ? `0${time}` : time);
 
