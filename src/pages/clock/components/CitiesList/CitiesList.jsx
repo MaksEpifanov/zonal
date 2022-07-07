@@ -26,12 +26,12 @@ const CitiesList = () => {
 
   return (
     <div className={styles.CitiesList}>
-      <Buttons isPrimary onClick={() => setOpenModal(true)}>ADD</Buttons>
+      <Buttons isPrimary onClick={() => setOpenModal(!isOpenModal)}>ADD</Buttons>
       <div className={styles.cities}>
         {citiesList}
       </div>
 
-      <Modal isOpen={isOpenModal} handleClose={() => setOpenModal(false)}>const</Modal>
+      <Modal isOpen={isOpenModal} handleClose={() => setOpenModal(!isOpenModal)}>const</Modal>
     </div>
   );
 };
