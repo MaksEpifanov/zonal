@@ -14,6 +14,7 @@
 
   .modal {
     &__content {
+      padding: 40px 50px;
       width: 70%;
       height: 70%;
       background-color: var(--background-color);
@@ -24,10 +25,18 @@
       font-size: 2rem;
 
       display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
-      justify-content: center;
+      gap: 20px;
+
+      overflow: scroll;
 
       position: relative;
+
+      >*:not(.modal__close) {
+        min-width: 400px;
+      }
     }
 
     &__close {

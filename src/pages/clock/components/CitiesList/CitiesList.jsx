@@ -3,6 +3,8 @@ import { useState } from 'react';
 import useClock from 'pages/clock/hooks/useClock';
 import Buttons from 'common/components/Buttons';
 import Modal from 'common/components/Modal';
+import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
+import AllCities from '../AllCities';
 
 import styles from './CitiesList.module.scss';
 
@@ -11,6 +13,10 @@ const CitiesList = () => {
 
   const [cities, , deleteCity] = useClock();
   const [activeCity, setActiveCity] = useClock('active');
+
+  const onViewModal = () => {
+    setOpenModal((prevOpenModal) => !prevOpenModal);
+  };
 
   const citiesList = cities.map((city) => (
     <Buttons
@@ -26,12 +32,12 @@ const CitiesList = () => {
 
   return (
     <div className={styles.CitiesList}>
-      <Buttons isPrimary onClick={() => setOpenModal(!isOpenModal)}>ADD</Buttons>
+      <Buttons isPrimary icon={<AddSVG />} onClick={onViewModal}>ADD</Buttons>
       <div className={styles.cities}>
         {citiesList}
       </div>
 
-      <Modal isOpen={isOpenModal} handleClose={() => setOpenModal(!isOpenModal)}>const</Modal>
+      <Modal isOpen={isOpenModal} handleClose={onViewModal}><AllCities /></Modal>
     </div>
   );
 };

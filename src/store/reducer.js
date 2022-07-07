@@ -21,6 +21,15 @@ const reducer = (state, action) => {
         },
       };
     }
+    case 'ADD_CITY': {
+      return {
+        ...state,
+        clock: {
+          ...state.clock,
+          citiesList: [...state.clock.citiesList, action.payload],
+        },
+      };
+    }
     case 'DELETE_CITY': {
       return {
         ...state,

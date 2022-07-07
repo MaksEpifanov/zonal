@@ -69,6 +69,7 @@
     background: var(--background);
     color: var(--foreground-color);
     box-shadow: var(--shadow);
+    text-transform: uppercase;
 
     transition: transform .4s ease-out, border .3s;
     -moz-transition: transform .4s ease-out, border .3s;
@@ -157,7 +158,7 @@
       padding: 0 20px;
       font-size: 18px;
 
-      &:not(&__item) {
+      &:not(&__item):not(&_noResponsive) {
         display: none;
       }
 
