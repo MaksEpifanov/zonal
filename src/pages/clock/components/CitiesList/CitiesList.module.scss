@@ -1,36 +1,47 @@
 .CitiesList {
-  padding: 0 20px;
-  max-height: 61vh;
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 
-  overflow: scroll;
-  /* Delete scrollbar */
-  -ms-overflow-style: none; // IE, Edge
-  scrollbar-width: none;
+  .cities {
+    padding: 0 20px;
+    max-height: 61vh;
 
-  z-index: 13;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
-  &::-webkit-scrollbar {
-    // Chromium
-    display: none;
-  }
+    overflow: scroll;
+    /* Delete scrollbar */
+    -ms-overflow-style: none; // IE, Edge
+    scrollbar-width: none;
 
-  &> :last-child {
-    margin-bottom: 20px;
+    z-index: 13;
+
+    &::-webkit-scrollbar {
+      // Chromium
+      display: none;
+    }
+
+    &> :last-child {
+      margin-bottom: 20px;
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .CitiesList {
-    margin: 0 -15px;
-    flex-direction: row;
-    padding: 20px 15px;
+    display: block;
 
-    &> :last-child {
-      margin-bottom: 0
+    .cities {
+      margin: 0 -15px;
+      flex-direction: row;
+      padding: 20px 15px;
+
+      &> :last-child {
+        margin-bottom: 0
+      }
     }
   }
 }

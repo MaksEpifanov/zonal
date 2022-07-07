@@ -34,7 +34,6 @@ const initialState = {
       {
         id: 8, city: 'Samara', timeZone: 4,
       },
-
     ],
   },
   stopwatch: [

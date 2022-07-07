@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { Layout } from 'common/components';
+import Layout from 'common/components/Layout';
 import {
   ClockPage, StopwatchPage, PomodoroPage, TodoPage,
 } from 'pages';

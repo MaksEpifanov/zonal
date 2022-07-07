@@ -1,17 +1,14 @@
-import useClock from 'pages/clock/hooks/useClock';
+import { useState } from 'react';
 
-import { Buttons } from 'common/components';
+import useClock from 'pages/clock/hooks/useClock';
+import Buttons from 'common/components/Buttons';
+import Modal from 'common/components/Modal';
 
 import styles from './CitiesList.module.scss';
 
-// const addCitiesList = [
-//   { id: 1, city: 'Moscow', timeZone: '+3' },
-//   { id: 2, city: 'Novosibirsk', timeZone: '+7' },
-//   { id: 3, city: 'New York', timeZone: '-4' },
-//   { id: 4, city: 'Tokyo', timeZone: '+9' },
-// ];
-
 const CitiesList = () => {
+  const [isOpenModal, setOpenModal] = useState(false);
+
   const [cities, , deleteCity] = useClock();
   const [activeCity, setActiveCity] = useClock('active');
 
@@ -29,7 +26,12 @@ const CitiesList = () => {
 
   return (
     <div className={styles.CitiesList}>
-      {citiesList}
+      <Buttons isPrimary onClick={() => setOpenModal(true)}>ADD</Buttons>
+      <div className={styles.cities}>
+        {citiesList}
+      </div>
+
+      <Modal isOpen={isOpenModal} handleClose={() => setOpenModal(false)}>const</Modal>
     </div>
   );
 };
