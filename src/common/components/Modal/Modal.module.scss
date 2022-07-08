@@ -35,7 +35,9 @@
       position: relative;
 
       >*:not(.modal__close) {
-        min-width: 400px;
+        min-width: 250px;
+        max-width: 400px;
+        width: 50%;
       }
     }
 
@@ -76,10 +78,6 @@
 
         color: var(--foreground-color);
         font-size: 2rem;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
 
         position: relative;
       }

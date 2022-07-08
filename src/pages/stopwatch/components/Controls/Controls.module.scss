@@ -1,0 +1,30 @@
+.Controls {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .subControls {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .Controls {
+    flex-direction: row;
+
+    .subControls {
+      flex-direction: row;
+
+      &>*:first-child {
+        position: absolute;
+        right: 210px;
+      }
+      &>*:last-child {
+        position: absolute;
+        left: 150px;
+      }
+    }
+  }
+}

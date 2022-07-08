@@ -1,0 +1,21 @@
+.StopwatchDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .timers {
+    position: relative;
+    height: 150px;
+
+    &__second {
+      height: 40px;
+      width: 100%;
+
+      position: absolute;
+      bottom: 0;
+    }
+    &>*:first-child {
+      padding-bottom: 40px;
+    }
+  }
+}

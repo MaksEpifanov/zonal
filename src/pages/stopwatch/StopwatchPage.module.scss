@@ -1,0 +1,34 @@
+.StopwatchPage {
+  padding: 50px 15% 0;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+
+  .controls {
+    min-width: 200px;
+    max-width: 400px;
+    align-self: flex-start;
+  }
+
+  .displays {
+    flex-grow: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .StopwatchPage {
+    padding: 30px 5% 0;
+
+    .controls {
+      min-width: 0;
+      width: 200px;
+
+      position: absolute;
+      bottom: 165px;
+
+      z-index: 13;
+    }  
+  }
+}

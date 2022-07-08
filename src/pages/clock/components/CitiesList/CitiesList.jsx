@@ -26,13 +26,13 @@ const CitiesList = () => {
       onDelete={() => deleteCity(city.id)}
       active={activeCity.id === city.id}
     >
-      {city.city.toUpperCase()}
+      {city.city}
     </Buttons>
   ));
 
   return (
     <div className={styles.CitiesList}>
-      <Buttons isPrimary icon={<AddSVG />} onClick={onViewModal}>ADD</Buttons>
+      <Buttons isPrimary icon={<AddSVG />} onClick={onViewModal}>add</Buttons>
       <div className={styles.cities}>
         {citiesList}
       </div>
