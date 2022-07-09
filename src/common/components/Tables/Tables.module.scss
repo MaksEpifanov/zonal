@@ -1,3 +1,33 @@
 .Tables {
-  display: block;
+  width: 100%;
+  padding: 5px;
+  padding-left: 10px;
+
+  font-family: var(--main-font);
+  font-size: 18px;
+  color: var(--foreground-color);
+  background: var(--background-color);
+
+  border: 3px solid white;
+  border-radius: 15px;
+
+  th,
+  td {
+    padding: 5px 1px;
+  }
+
+  thead {
+    text-align: left;
+  }
+
+  tbody {
+    td:not(:first-child) {
+      font-family: var(--second-font);
+
+      &:nth-child(2) {
+        color: var(--active-color);
+      }
+    }
+  }
+
 }
