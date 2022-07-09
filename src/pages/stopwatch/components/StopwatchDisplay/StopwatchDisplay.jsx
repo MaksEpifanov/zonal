@@ -2,6 +2,19 @@ import Displays from 'common/components/Displays';
 import Tables from 'common/components/Tables';
 import styles from './StopwatchDisplay.module.scss';
 
+const columns = [
+  { title: '№' },
+  { title: 'Interval' },
+  { title: 'Total' },
+];
+
+const data = [
+  { id: 1, interval: '00:00:02.033', total: '00:00:02.033' },
+  { id: 2, interval: '00:00:02.033', total: '00:00:02.033' },
+  { id: 3, interval: '00:00:02.033', total: '00:00:02.033' },
+  { id: 4, interval: '00:00:02.033', total: '00:00:02.033' },
+];
+
 const timers = '00:00:02.033';
 
 const StopwatchDisplay = () => (
@@ -13,7 +26,7 @@ const StopwatchDisplay = () => (
       </div>
     </div>
     <div className={styles.tables}>
-      <Tables />
+      <Tables columns={columns} data={data} />
     </div>
   </div>
 );

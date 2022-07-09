@@ -7,10 +7,10 @@ import styles from './Controls.module.scss';
 
 const Controls = () => (
   <div className={styles.Controls}>
-    <Buttons isPrimary>start</Buttons>
+    <Buttons isPrimary onClick={() => {}}>start</Buttons>
     <div className={styles.subControls}>
-      <Buttons icon={<SplitSVG />}>split</Buttons>
-      <Buttons icon={<ResetSVG />}>reset</Buttons>
+      <Buttons icon={<SplitSVG />} onClick={() => {}}>split</Buttons>
+      <Buttons icon={<ResetSVG />} onClick={() => {}}>reset</Buttons>
     </div>
   </div>
 );
