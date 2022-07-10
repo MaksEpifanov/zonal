@@ -1,0 +1,32 @@
+.Toggles {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__theme,
+  &__lang {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    fill: currentColor;
+    transition: color .4s;
+
+    &:hover {
+      color: var(--active-color);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Toggles {
+    flex-direction: row;
+
+    &>:not(:first-child) {
+      margin-left: 26px;
+    }
+  }
+}

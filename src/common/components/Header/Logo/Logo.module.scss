@@ -1,0 +1,24 @@
+.Logo {
+  min-width: 24px;
+  min-height: 40px;
+
+  &>* {
+    fill: var(--secondary-color);
+  }
+
+  &__mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Logo {
+    &__mobile {
+      display: block;
+    }
+
+    &__desktop {
+      display: none;
+    }
+  }
+}

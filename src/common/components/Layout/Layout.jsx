@@ -6,7 +6,7 @@ import Header from 'common/components/Header';
 import styles from './Layout.module.scss';
 
 const Layout = () => (
-  <div className={styles.container}>
+  <div className={styles.Layout}>
     <Header />
     <main className={styles.main}>
       <Outlet />

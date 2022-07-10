@@ -1,0 +1,78 @@
+.PomodoroPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+
+  .progress {
+    width: 100%;
+    height: 14px;
+    border-radius: 10px;
+
+    &::-moz-progress-bar,
+    ::-webkit-progress-bar {
+      border-radius: 10px;
+    }
+
+    &[value] {
+      &::-webkit-progress-value {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .displays {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    max-height: 600px;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &>*:first-child {
+      height: 230px;
+    }
+
+    &__sub {
+      display: flex;
+      height: 54px;
+      gap: 10px;
+
+      &>*:last-child {
+        width: 54px;
+        font-size: var(--text-base-size);
+        background-color: #212D3F;
+        color: #EEEEEE;
+
+      }
+    }
+  }
+
+  .controls {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    &>* {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-widht: 768px) {
+  .PomodoroPage {
+    .controls {
+      &>* {
+        position: absolute;
+        bottom: 200px;
+      }
+    }
+  }
+}

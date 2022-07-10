@@ -1,25 +1,21 @@
-.container {
+.Layout {
   max-width: 1140px;
   height: 100vh;
+
   margin: 0 auto;
   padding: 20px 15px;
 
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
 
 .main {
   flex-grow: 1;
+  margin: 5% 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .container {
-    gap: 5px;
-    max-height: 90vh;
-  }
-
-  .main {
-    min-height: 300px;
+  .Layout {
+    height: 90vh;
   }
 }

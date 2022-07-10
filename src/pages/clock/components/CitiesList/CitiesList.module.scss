@@ -16,7 +16,6 @@
     /* Delete scrollbar */
     -ms-overflow-style: none; // IE, Edge
     scrollbar-width: none;
-
     z-index: 13;
 
     &::-webkit-scrollbar {
