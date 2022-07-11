@@ -7,6 +7,7 @@ import {
 } from 'pages';
 
 import { StoreContext } from 'store/Store';
+import Test from './pages/test';
 
 import './App.scss';
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="stopwatch" element={<StopwatchPage />} />
         <Route path="pomodoro" element={<PomodoroPage />} />
         <Route path="todo" element={<TodoPage />} />
+        <Route path="test" element={<Test />} />
       </Route>
     </Routes>
   );

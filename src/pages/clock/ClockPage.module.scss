@@ -2,11 +2,70 @@
   height: 100%;
   display: flex;
   justify-content: space-evenly;
+
+  &__left {
+    padding: 0 10px;
+    min-width: 250px;
+    max-width: 300px;
+
+    flex-grow: 1;
+
+    &>:first-child {
+      margin-bottom: 30px;
+    }
+  }
 }
 
 @media only screen and (max-width: 768px) {
   .ClockPage {
     flex-direction: column-reverse;
-    justify-content: space-evenly;
+
+    &__left {
+      max-width: 100%;
+
+      flex-grow: 0;
+
+      &>:first-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__mainBtn {
+      position: fixed;
+      bottom: calc(90px - 37px);
+      left: calc(50% - 37px);
+      z-index: 11;
+
+      background-color: var(--background-color);
+      box-shadow: none;
+      border: 6px solid var(--background-color);
+      border-radius: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-right-radius: 20px;
+        box-shadow: 0 -10px 0 0 var(--background-color);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-left-radius: 20px;
+        box-shadow: 0 -10px 0 0 var(--background-color);
+      }
+    }
   }
 }
+
+@media screen {}

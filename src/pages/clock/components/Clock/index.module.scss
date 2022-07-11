@@ -1,9 +1,18 @@
 .Clock {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+
+  &>*:not(:last-child) {
+    margin-bottom: 40px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .Clock {}
+  .Clock {
+    &>*:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
 }
