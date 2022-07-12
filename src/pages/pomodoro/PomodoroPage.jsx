@@ -21,8 +21,10 @@ const PomodoroPage = () => (
       </div>
     </div>
     <div className={styles.controls}>
-      <Button primary>start</Button>
-      <Button icon={<NextSVG />}>next</Button>
+      <div className={styles.controls__mainBtn}>
+        <Button primary />
+      </div>
+      <Button icon={<NextSVG />} value="next" />
     </div>
   </div>
 );

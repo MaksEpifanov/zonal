@@ -80,6 +80,10 @@
     }
   }
 
+  &:not(&__item) &__text {
+    margin-left: 26px;
+  }
+
   &__delete {
     height: 100%;
 

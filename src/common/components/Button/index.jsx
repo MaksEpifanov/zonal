@@ -37,7 +37,7 @@ const Button = ({
   return (
     <button type="button" className={className} onClick={onClick}>
       {btnIcon}
-      <span className={styles.Button__text}>{value}</span>
+      <div className={styles.Button__text}>{value}</div>
       {btnDelete}
     </button>
   );
@@ -61,7 +61,7 @@ Button.defaultProps = {
   active: false,
   primary: false,
   icon: <PlaySVG />,
-  value: '',
+  value: 'start',
   noResponse: false,
   onDelete: () => {},
 };
