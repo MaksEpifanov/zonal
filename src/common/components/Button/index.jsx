@@ -8,10 +8,11 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 
 const Button = ({
-  children, onClick, onDelete, primary, item, active, icon,
+  onClick, onDelete, noResponse, primary, item, active, icon, value,
 }) => {
   const className = cx({
     Button: true,
+    'Button_no-response': noResponse,
     Button__item: item,
     Button__item_active: active,
     Button__primary: primary,
@@ -36,7 +37,7 @@ const Button = ({
   return (
     <button type="button" className={className} onClick={onClick}>
       {btnIcon}
-      <span className={styles.Button__text}>{children}</span>
+      <span className={styles.Button__text}>{value}</span>
       {btnDelete}
     </button>
   );
@@ -45,13 +46,14 @@ const Button = ({
 export default Button;
 
 Button.propTypes = {
-  children: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   item: PropTypes.bool,
   onDelete: PropTypes.func,
+  noResponse: PropTypes.bool,
   active: PropTypes.bool,
   primary: PropTypes.bool,
   icon: PropTypes.element,
+  value: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -59,5 +61,7 @@ Button.defaultProps = {
   active: false,
   primary: false,
   icon: <PlaySVG />,
+  value: '',
+  noResponse: false,
   onDelete: () => {},
 };

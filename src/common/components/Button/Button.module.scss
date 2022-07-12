@@ -136,8 +136,6 @@
 
 @media only screen and (max-width: 768px) {
   .Button {
-    width: 62px;
-
     &:hover {
       transform: none;
     }
@@ -146,16 +144,12 @@
       transform: scale(1.04);
     }
 
-    &__text {
-      display: none;
+    &:not(&__item, &_no-response) {
+      width: 62px;
     }
 
-    &__item {
-      width: 100%;
-
-      .Button__text {
-        display: block;
-      }
+    &:not(&__item, &_no-response) &__text {
+      display: none;
     }
   }
 }

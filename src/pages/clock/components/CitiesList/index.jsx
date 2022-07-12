@@ -14,9 +14,8 @@ const CitiesList = () => {
       onClick={() => setActiveCity(city)}
       onDelete={() => deleteCity(city.id)}
       active={activeCity.id === city.id}
-    >
-      {city.city}
-    </Button>
+      value={city.city}
+    />
   ));
 
   return (

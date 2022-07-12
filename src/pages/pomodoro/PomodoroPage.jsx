@@ -1,7 +1,7 @@
 import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
 
 import Display from 'common/components/Displays';
-import Buttons from 'common/components/Buttons';
+import Button from 'common/components/Button';
 import ProgressBar from './components/ProgressBar';
 
 import styles from './PomodoroPage.module.scss';
@@ -21,8 +21,8 @@ const PomodoroPage = () => (
       </div>
     </div>
     <div className={styles.controls}>
-      <Buttons isPrimary>start</Buttons>
-      <Buttons icon={<NextSVG />}>next</Buttons>
+      <Button primary>start</Button>
+      <Button icon={<NextSVG />}>next</Button>
     </div>
   </div>
 );

@@ -18,7 +18,7 @@ const ClockPage = () => {
     <div className={styles.ClockPage}>
       <div className={styles.ClockPage__left}>
         <div className={styles.ClockPage__mainBtn}>
-          <Button primary icon={<AddSVG />} onClick={onViewModal}>add</Button>
+          <Button primary icon={<AddSVG />} onClick={onViewModal} value="add" />
         </div>
         <CitiesList />
       </div>

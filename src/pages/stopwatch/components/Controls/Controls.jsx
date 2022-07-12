@@ -1,4 +1,4 @@
-import Buttons from 'common/components/Buttons';
+import Button from 'common/components/Button';
 
 import { ReactComponent as ResetSVG } from 'assets/icons/reset.svg';
 import { ReactComponent as SplitSVG } from 'assets/icons/split.svg';
@@ -7,10 +7,10 @@ import styles from './Controls.module.scss';
 
 const Controls = () => (
   <div className={styles.Controls}>
-    <Buttons isPrimary onClick={() => {}}>start</Buttons>
+    <Button primary onClick={() => {}}>start</Button>
     <div className={styles.subControls}>
-      <Buttons icon={<SplitSVG />} onClick={() => {}}>split</Buttons>
-      <Buttons icon={<ResetSVG />} onClick={() => {}}>reset</Buttons>
+      <Button icon={<SplitSVG />} onClick={() => {}}>split</Button>
+      <Button icon={<ResetSVG />} onClick={() => {}}>reset</Button>
     </div>
   </div>
 );

@@ -1,23 +1,30 @@
-import Buttons from 'common/components/Buttons';
+import Button from 'common/components/Button';
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
 import useClock from 'pages/clock/hooks/useClock';
 import allCities from 'services/allCities/citiesList';
+
+import styles from './AllCities.module.scss';
 
 const AllCities = () => {
   const [cities, addCity] = useClock();
   const citiesIds = cities.map((city) => city.id);
   const notAddedCity = allCities.filter((city) => !citiesIds.includes(city.id));
 
-  return notAddedCity.map((city) => (
-    <Buttons
-      isNoResponsive
+  const notAddedCityLabel = notAddedCity.map((city) => (
+    <Button
+      key={city.id}
+      noResponse
       icon={<AddSVG />}
       onClick={() => addCity(city)}
-      key={city.id}
-    >
-      {city.city}
-    </Buttons>
+      value={city.city}
+    />
   ));
+
+  return (
+    <div className={styles.AllCities}>
+      {notAddedCityLabel}
+    </div>
+  );
 };
 
 export default AllCities;
