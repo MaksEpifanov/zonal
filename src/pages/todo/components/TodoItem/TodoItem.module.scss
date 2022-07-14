@@ -3,21 +3,40 @@
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
-  border: 1px solid black;
   border-radius: 15px;
+
+  cursor: pointer;
 
   &>*:not(:last-child) {
     margin-right: 15px;
   }
 
-  .checkbox {}
-
   .main {
     flex-grow: 1;
     justify-self: flex-start;
 
-    &__text {}
+    overflow: hidden;
+
+    &__text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      position: relative;
+      transition: color .4s;
+
+      &::before {
+        transition: width .4s;
+        content: '';
+        position: absolute;
+        top: 50%;
+        width: 0;
+        background-color: var(--gray-color);
+        height: 3px;
+      }
+    }
 
     &__list {
       font-size: var(--text-sm);
@@ -26,13 +45,24 @@
   }
 
   .delete-btn {
+    width: 32px;
+    height: 32px;
+    fill: var(--gray-color);
+
+    flex-shrink: 0;
     visibility: hidden;
   }
 
   &_checked {
-
     .main {
       color: var(--gray-color);
+
+      &__text {
+
+        &::before {
+          width: 100%;
+        }
+      }
 
       &__list {
         opacity: .3;
@@ -42,5 +72,15 @@
     .delete-btn {
       visibility: visible;
     }
+  }
+
+  &_open {
+    .main__text {
+      white-space: inherit;
+    }
+  }
+
+  &:hover {
+    box-shadow: var(--shadow);
   }
 }

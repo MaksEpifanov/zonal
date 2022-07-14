@@ -1,1 +1,10 @@
-.Todos {}
+.Todos {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: scroll;
+
+  &>*:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}

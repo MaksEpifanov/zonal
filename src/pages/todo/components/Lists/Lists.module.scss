@@ -1,12 +1,29 @@
 .Lists {
-
   .header {
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
-    button {
-      height: 32px;
+    &__addBtn {
+      height: 34px;
+      width: 34px;
+      padding: 10px;
+
+      border-radius: 50%;
+
+      fill: var(--foreground-color);
+      box-shadow: var(--shadow);
+      cursor: pointer;
     }
   }
 
+  .lists {
+    display: flex;
+    flex-direction: column;
+
+    &>*:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
 }

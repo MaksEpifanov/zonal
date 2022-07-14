@@ -2,6 +2,8 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
+import { ReactComponent as DeleteSVG } from 'assets/icons/delete.svg';
+
 import Checkbox from 'common/components/UI/Checkbox';
 
 import styles from './TodoItem.module.scss';
@@ -12,9 +14,12 @@ const TodoItem = ({
   list, text, isChecked, onCheck, onDelete, id,
 }) => {
   const [checked, setCheck] = useState(isChecked);
+  const [open, setOpen] = useState(false);
 
   const className = cx({
-    TodoItem, TodoItem_checked: checked,
+    TodoItem,
+    TodoItem_checked: checked,
+    TodoItem_open: open,
   });
 
   const onChange = () => {
@@ -22,14 +27,18 @@ const TodoItem = ({
     onCheck(checked);
   };
 
+  const onOpen = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
   return (
     <div className={className}>
       <Checkbox className={styles.checkbox} id={id} onChange={onChange} checked={checked} />
-      <div className={styles.main}>
+      <div className={styles.main} onClick={onOpen} onKeyDown={() => {}} role="button" tabIndex="0">
         <div className={styles.main__text}>{text}</div>
         <div className={list && styles.main__list}>{list}</div>
       </div>
-      <button className={styles['delete-btn']} type="button" onClick={onDelete}>delete</button>
+      <DeleteSVG className={styles['delete-btn']} type="button" onClick={onDelete} />
     </div>
   );
 };

@@ -5,8 +5,9 @@ import styles from './TodoPage.module.scss';
 
 const TodoPage = () => (
   <div className={styles.TodoPage}>
-    <Lists />
-    <Todos />
+    <Lists className={styles.TodoPage__lists} />
+    <div className={styles.TodoPage__sep} />
+    <Todos className={styles.TodoPage__todos} />
   </div>
 );
 
