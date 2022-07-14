@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Modal from 'common/components/UI/Modal';
 import Button from 'common/components/UI/Button';
+import { ReactComponent as MenuSVG } from 'assets/icons/menu.svg';
 import Lists from './components/Lists';
 import Todos from './components/Todos';
 
@@ -18,7 +19,7 @@ const TodoPage = () => {
       <div className={styles.TodoPage__sep} />
       <Todos className={styles.TodoPage__todos} />
       <div className={styles.TodoPage__openBtn}>
-        <Button primary onClick={onViewModal} value="View" />
+        <Button primary onClick={onViewModal} icon={<MenuSVG />} value="View" />
       </div>
 
       <Modal
