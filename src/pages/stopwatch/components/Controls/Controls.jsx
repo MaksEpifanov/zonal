@@ -1,4 +1,4 @@
-import Button from 'common/components/Button';
+import Button from 'common/components/UI/Button';
 
 import { ReactComponent as ResetSVG } from 'assets/icons/reset.svg';
 import { ReactComponent as SplitSVG } from 'assets/icons/split.svg';

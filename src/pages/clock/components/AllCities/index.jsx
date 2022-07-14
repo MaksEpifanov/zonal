@@ -1,4 +1,4 @@
-import Button from 'common/components/Button';
+import Button from 'common/components/UI/Button';
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
 import useClock from 'pages/clock/hooks/useClock';
 import allCities from 'services/allCities/citiesList';

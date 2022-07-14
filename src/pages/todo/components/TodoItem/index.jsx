@@ -1,24 +1,35 @@
 import { useState } from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
+
+import Checkbox from 'common/components/UI/Checkbox';
 
 import styles from './TodoItem.module.scss';
 
+const cx = classNames.bind(styles);
+
 const TodoItem = ({
-  list, text, isChecked, onCheck, onDelete,
+  list, text, isChecked, onCheck, onDelete, id,
 }) => {
   const [checked, setCheck] = useState(isChecked);
 
+  const className = cx({
+    TodoItem, TodoItem_checked: checked,
+  });
+
   const onChange = () => {
-    setCheck((prevCheked) => !prevCheked);
+    setCheck((prevChecked) => !prevChecked);
     onCheck(checked);
   };
 
   return (
-    <div className={styles.TodoItem}>
-      <input type="checkbox" checked={checked} onChange={onChange} />
-      <div className={styles.todo}>{text}</div>
-      <div className={styles.list}>{list}</div>
-      <button type="button" onClick={onDelete}>delete</button>
+    <div className={className}>
+      <Checkbox className={styles.checkbox} id={id} onChange={onChange} checked={checked} />
+      <div className={styles.main}>
+        <div className={styles.main__text}>{text}</div>
+        <div className={list && styles.main__list}>{list}</div>
+      </div>
+      <button className={styles['delete-btn']} type="button" onClick={onDelete}>delete</button>
     </div>
   );
 };
@@ -26,6 +37,7 @@ const TodoItem = ({
 export default TodoItem;
 
 TodoItem.propTypes = {
+  id: PropTypes.number.isRequired,
   list: PropTypes.string,
   text: PropTypes.string.isRequired,
   isChecked: PropTypes.bool.isRequired,

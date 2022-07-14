@@ -1,7 +1,7 @@
 import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
 
-import Display from 'common/components/Displays';
-import Button from 'common/components/Button';
+import Display from 'common/components/UI/Displays';
+import Button from 'common/components/UI/Button';
 import ProgressBar from './components/ProgressBar';
 
 import styles from './PomodoroPage.module.scss';

@@ -1,5 +1,5 @@
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
-import Button from 'common/components/Button';
+import Button from 'common/components/UI/Button';
 
 import styles from './Lists.module.scss';
 
@@ -13,7 +13,7 @@ const Lists = () => (
       </button>
     </div>
     <div className={styles.lists}>
-      <Button item noResponse />
+      <Button item noResponse onClick={() => {}} />
     </div>
   </div>
 );

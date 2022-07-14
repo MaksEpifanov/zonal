@@ -1,5 +1,5 @@
 import { ReactComponent as SplitSVG } from 'assets/icons/split.svg';
-import Button from '../../common/components/Button';
+import Button from '../../common/components/UI/Button';
 
 const Test = () => (
   <div style={{

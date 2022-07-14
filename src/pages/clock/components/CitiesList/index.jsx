@@ -1,5 +1,5 @@
 import useClock from 'pages/clock/hooks/useClock';
-import Button from 'common/components/Button';
+import Button from 'common/components/UI/Button';
 
 import styles from './CitiesList.module.scss';
 

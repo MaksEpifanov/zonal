@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { Clock, CitiesList, AllCities } from 'pages/clock/components';
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
-import Button from 'common/components/Button';
-import Modal from 'common/components/Modal';
+import Button from 'common/components/UI/Button';
+import Modal from 'common/components/UI/Modal';
 
 import styles from './ClockPage.module.scss';
 

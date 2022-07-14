@@ -1,1 +1,46 @@
-.TodoItem {}
+.TodoItem {
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border: 1px solid black;
+  border-radius: 15px;
+
+  &>*:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  .checkbox {}
+
+  .main {
+    flex-grow: 1;
+    justify-self: flex-start;
+
+    &__text {}
+
+    &__list {
+      font-size: var(--text-sm);
+      color: var(--gray-color);
+    }
+  }
+
+  .delete-btn {
+    visibility: hidden;
+  }
+
+  &_checked {
+
+    .main {
+      color: var(--gray-color);
+
+      &__list {
+        opacity: .3;
+      }
+    }
+
+    .delete-btn {
+      visibility: visible;
+    }
+  }
+}

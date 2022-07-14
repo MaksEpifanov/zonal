@@ -1,0 +1,43 @@
+.Checkbox {
+  input[type="checkbox"] {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    color: black;
+    border: 1px solid var(--gray-color);
+    border-radius: 50%;
+    appearance: none;
+    outline: 0;
+    cursor: pointer;
+    transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      display: block;
+      top: 16%;
+      left: 32%;
+      width: 35%;
+      height: 50%;
+      border-style: solid;
+      border-color: white;
+      border-width: 0 4px 4px 0;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+
+    &:checked {
+      color: white;
+      border-color: var(--gray-color);
+      background: var(--gray-color);
+
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+}

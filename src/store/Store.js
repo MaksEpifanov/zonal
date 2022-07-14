@@ -13,24 +13,6 @@ const initialState = {
       {
         id: 1, city: 'Moscow', timeZone: 3,
       },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
-      {
-        id: 1, city: 'Moscow', timeZone: 3,
-      },
     ],
   },
   stopwatch: [

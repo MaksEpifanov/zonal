@@ -1,5 +1,5 @@
-import Displays from 'common/components/Displays';
-import Tables from 'common/components/Tables';
+import Displays from 'common/components/UI/Displays';
+import Tables from 'common/components/UI/Tables';
 import styles from './StopwatchDisplay.module.scss';
 
 const columns = [
