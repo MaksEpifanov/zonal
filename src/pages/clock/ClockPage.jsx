@@ -10,9 +10,7 @@ import styles from './ClockPage.module.scss';
 const ClockPage = () => {
   const [isOpenModal, setOpenModal] = useState(false);
 
-  const onViewModal = () => {
-    setOpenModal((prevOpenModal) => !prevOpenModal);
-  };
+  const onViewModal = () => setOpenModal((prevOpenModal) => !prevOpenModal);
 
   return (
     <div className={styles.ClockPage}>

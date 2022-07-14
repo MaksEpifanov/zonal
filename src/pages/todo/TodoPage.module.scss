@@ -21,6 +21,10 @@
   &__todos {
     padding: 20px 10px;
   }
+
+  &__openBtn {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -31,6 +35,44 @@
 
     &__sep {
       display: none;
+    }
+
+    &__openBtn {
+      display: block;
+
+      position: fixed;
+      bottom: calc(90px - 37px);
+      left: calc(50% - 37px);
+      z-index: 11;
+
+      background-color: var(--background-color);
+      box-shadow: none;
+      border: 6px solid var(--background-color);
+      border-radius: 50%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-right-radius: 20px;
+        box-shadow: 0 -10px 0 0 var(--background-color);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-top-left-radius: 20px;
+        box-shadow: 0 -10px 0 0 var(--background-color);
+      }
     }
   }
 }

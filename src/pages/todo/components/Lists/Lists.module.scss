@@ -5,25 +5,41 @@
     justify-content: space-between;
     align-items: center;
 
-    &__addBtn {
-      height: 34px;
-      width: 34px;
-      padding: 10px;
 
+    &__title {
+      font-size: var(--text-base-size);
+    }
+
+    &__addBtn {
+      height: 42px;
+      width: 42px;
+      padding: 15px;
       border-radius: 50%;
 
       fill: var(--foreground-color);
       box-shadow: var(--shadow);
       cursor: pointer;
+
+      &:active {
+        transform: scale(.9);
+      }
     }
   }
 
   .lists {
     display: flex;
     flex-direction: column;
+    font-size: var(--text-base-size);
 
     &>*:not(:last-child) {
       margin-bottom: 30px;
     }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .Lists {
+    .header {}
   }
 }

@@ -9,10 +9,8 @@ const Lists = ({ className }) => {
   return (
     <div className={classNames}>
       <div className={styles.header}>
-        <h3>Lists</h3>
+        <h3 className={styles.header__title}>Lists</h3>
         <AddSVG className={styles.header__addBtn} />
-        {/* <button type="button">
-        </button> */}
       </div>
       <div className={styles.lists}>
         <Button item noResponse onClick={() => {}} value="all" />
