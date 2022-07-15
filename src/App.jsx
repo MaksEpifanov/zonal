@@ -12,7 +12,7 @@ import Test from './pages/test';
 import './App.scss';
 
 const App = () => {
-  const [{ theme }] = useContext(StoreContext);
+  const [{ common: { theme } }] = useContext(StoreContext);
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
   }, [theme]);
