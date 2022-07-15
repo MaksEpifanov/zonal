@@ -14,8 +14,8 @@ const initialState = {
     ],
   },
   stopwatch: {
-    info: { isPause: false },
-    time: { main: 0, sub: 0 },
+    info: { isStart: false, isReset: true },
+    time: { main: 0, lap: 0 },
     laps: [
       { id: 0, total: 0, lap: 0 },
     ],
