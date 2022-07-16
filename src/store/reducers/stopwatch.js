@@ -1,7 +1,7 @@
 const stopwatchReducer = (state, action) => {
   switch (action.type) {
     case 'START_STOPWATCH': {
-      const newState = {
+      return {
         ...state,
         stopwatch: {
           ...state.stopwatch,
@@ -12,12 +12,10 @@ const stopwatchReducer = (state, action) => {
           },
         },
       };
-      console.log('Start', newState.stopwatch.info);
-      return newState;
     }
 
     case 'SPLIT_STOPWATCH': {
-      const newState = {
+      return {
         ...state,
         stopwatch: {
           ...state.stopwatch,
@@ -34,8 +32,6 @@ const stopwatchReducer = (state, action) => {
           },
         },
       };
-      console.log('Split', newState.stopwatch.laps);
-      return newState;
     }
 
     case 'CHANGE_STOPWATCH': {
@@ -49,7 +45,7 @@ const stopwatchReducer = (state, action) => {
     }
 
     case 'RESET_STOPWATCH': {
-      const newState = {
+      return {
         ...state,
         stopwatch: {
           info: {
@@ -61,8 +57,6 @@ const stopwatchReducer = (state, action) => {
           laps: [],
         },
       };
-      console.log('Reset', newState.stopwatch.info, newState.stopwatch.laps);
-      return newState;
     }
 
     default: return state;

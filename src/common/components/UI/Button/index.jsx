@@ -1,21 +1,22 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
 
 import { ReactComponent as DeleteSVG } from 'assets/icons/delete.svg';
 import { ReactComponent as PlaySVG } from 'assets/icons/play.svg';
 import styles from './Button.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
 const Button = ({
-  onClick, onDelete, noResponse, primary, item, active, icon, value, disabled,
+  className, onClick, onDelete, noResponse, primary, item, active, icon, value, disabled,
 }) => {
-  const className = cx({
+  const classNames = cx({
     Button: true,
     'Button_no-response': noResponse,
     Button__item: item,
     Button__item_active: active,
     Button__primary: primary,
+    className: !!className,
   });
 
   const btnIcon = !item ? (
@@ -35,7 +36,7 @@ const Button = ({
   ) : null;
 
   return (
-    <button type="button" className={className} onClick={onClick} disabled={disabled}>
+    <button type="button" className={classNames} onClick={onClick} disabled={disabled}>
       {btnIcon}
       <div className={styles.Button__text}>{value}</div>
       {btnDelete}
@@ -46,6 +47,7 @@ const Button = ({
 export default Button;
 
 Button.propTypes = {
+  className: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   item: PropTypes.bool,
   onDelete: PropTypes.func,
@@ -58,6 +60,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
+  className: '',
   item: false,
   active: false,
   primary: false,
@@ -65,5 +68,5 @@ Button.defaultProps = {
   value: 'start',
   noResponse: false,
   disabled: false,
-  onDelete: () => {},
+  onDelete: () => { },
 };

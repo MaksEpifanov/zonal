@@ -12,34 +12,26 @@
   overflow: hidden;
   z-index: 999;
 
-  .modal {
-    &__content {
-      padding: 40px 50px;
-      width: 70%;
-      height: 70%;
-      background-color: var(--background-color);
-      border: 4px solid var(--foreground-color);
-      border-radius: 20px;
+  .content {
+    padding: 40px 50px;
+    width: 70%;
+    height: 70%;
+    background-color: var(--background-color);
+    border: 4px solid var(--foreground-color);
+    border-radius: 20px;
 
-      color: var(--foreground-color);
-      font-size: 2rem;
+    color: var(--foreground-color);
+    font-size: 2rem;
 
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
 
-      overflow: scroll;
+    overflow: scroll;
 
-      position: relative;
-
-      >*:not(.modal__close) {
-        min-width: 290px;
-        max-width: 600px;
-        width: 50%;
-      }
-    }
+    position: relative;
 
     &__close {
       width: 24px;
@@ -50,6 +42,12 @@
       position: absolute;
       top: 15px;
       right: 15px;
+    }
+
+    >*:not(.modal__close) {
+      min-width: 290px;
+      max-width: 600px;
+      width: 50%;
     }
   }
 }

@@ -8,7 +8,7 @@ import styles from './Layout.module.scss';
 const Layout = () => (
   <div className={styles.Layout}>
     <Header />
-    <main className={styles.main}>
+    <main className={styles.Layout__main}>
       <Outlet />
     </main>
     <Footer />

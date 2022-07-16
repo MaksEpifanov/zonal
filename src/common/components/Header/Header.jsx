@@ -7,14 +7,10 @@ import styles from './Header.module.scss';
 
 const Header = () => (
   <header className={styles.Header}>
-    <div className={styles.Header__logo}>
-      <Logo />
-    </div>
-    <div className={styles['Header__current-page']}>
-      <CurrentPage />
-    </div>
+    <Logo className={styles.Header__logo} />
+    <CurrentPage className={styles['Header__current-page']} />
     <NavigationMenu />
-    <Toggles />
+    <Toggles className={styles.Header__toggles} />
   </header>
 );
 

@@ -19,8 +19,12 @@ const initialState = {
     laps: [],
   },
   pomodoro: {
-    time: '25:00',
+    timeFocus: 25,
+    timeShortBreak: 5,
+    timeLongBreak: 15,
     isFocus: true,
+    isShortBreak: false,
+    isLongBreak: false,
     lap: 0,
   },
   todo: {

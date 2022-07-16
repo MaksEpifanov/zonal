@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNamesBind from 'classnames/bind';
 
 import styles from './Displays.module.scss';
 
-const cx = classNames.bind(styles);
+const cx = classNamesBind.bind(styles);
 
-const Displays = ({ isActive, children }) => {
-  const className = cx({
+const Displays = ({ className, isActive, children }) => {
+  const classNames = cx({
+    [className]: !!className,
     Displays: true,
     Displays_active: isActive,
   });
 
   return (
-    <div className={className}>
+    <div className={classNames}>
       {children}
     </div>
   );
@@ -21,10 +22,12 @@ const Displays = ({ isActive, children }) => {
 export default Displays;
 
 Displays.propTypes = {
+  className: PropTypes.string,
   isActive: PropTypes.bool,
-  children: PropTypes.string.isRequired,
+  children: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 Displays.defaultProps = {
+  className: '',
   isActive: false,
 };

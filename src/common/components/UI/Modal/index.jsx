@@ -1,12 +1,22 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { ReactComponent as CloseSVG } from 'assets/icons/close.svg';
+import classNamesBind from 'classnames/bind';
 
+import { ReactComponent as CloseSVG } from 'assets/icons/close.svg';
 import ReactPortal from 'common/components/ReactPortal';
 
 import styles from './Modal.module.scss';
 
-const Modal = ({ children, isOpen, handleClose }) => {
+const cx = classNamesBind.bind(styles);
+
+const Modal = ({
+  className, children, isOpen, handleClose,
+}) => {
+  const classNames = cx({
+    [className]: !!className,
+    content: true,
+  });
+
   useEffect(() => {
     const closeOnEscapeKey = (e) => (e.key === 'Escape' ? handleClose() : null);
     document.body.addEventListener('keydown', closeOnEscapeKey);
@@ -14,13 +24,14 @@ const Modal = ({ children, isOpen, handleClose }) => {
       document.body.removeEventListener('keydown', closeOnEscapeKey);
     };
   }, [handleClose]);
+
   if (!isOpen) return null;
 
   return (
     <ReactPortal wrappeId="modal">
       <div className={styles.Modal}>
-        <div className={styles.modal__content}>
-          <CloseSVG className={styles.modal__close} onClick={handleClose} />
+        <div className={classNames}>
+          <CloseSVG className={styles.content__close} onClick={handleClose} />
           {children}
         </div>
       </div>
@@ -31,7 +42,11 @@ const Modal = ({ children, isOpen, handleClose }) => {
 export default Modal;
 
 Modal.propTypes = {
+  className: PropTypes.string,
   isOpen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
+};
+Modal.defaultProps = {
+  className: '',
 };
