@@ -15,10 +15,8 @@ const initialState = {
   },
   stopwatch: {
     info: { isStart: false, isReset: true },
-    time: { main: 0, lap: 0 },
-    laps: [
-      { id: 0, total: 0, lap: 0 },
-    ],
+    time: { main: { ms: 0, sec: 0, min: 0 }, lap: { ms: 0, sec: 0, min: 0 } },
+    laps: [],
   },
   pomodoro: {
     time: '25:00',
@@ -31,7 +29,7 @@ const initialState = {
     ],
     todos: [
       {
-        orderNum: 0, idList: 0, id: 0, isCompleted: false, taks: 'Example todo',
+        orderNum: 0, idList: 0, id: 0, isCompleted: false, task: 'Example todo',
       },
     ],
   },

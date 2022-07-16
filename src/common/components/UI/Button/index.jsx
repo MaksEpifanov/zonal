@@ -8,7 +8,7 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 
 const Button = ({
-  onClick, onDelete, noResponse, primary, item, active, icon, value,
+  onClick, onDelete, noResponse, primary, item, active, icon, value, disabled,
 }) => {
   const className = cx({
     Button: true,
@@ -35,7 +35,7 @@ const Button = ({
   ) : null;
 
   return (
-    <button type="button" className={className} onClick={onClick}>
+    <button type="button" className={className} onClick={onClick} disabled={disabled}>
       {btnIcon}
       <div className={styles.Button__text}>{value}</div>
       {btnDelete}
@@ -54,6 +54,7 @@ Button.propTypes = {
   primary: PropTypes.bool,
   icon: PropTypes.element,
   value: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -63,5 +64,6 @@ Button.defaultProps = {
   icon: <PlaySVG />,
   value: 'start',
   noResponse: false,
+  disabled: false,
   onDelete: () => {},
 };

@@ -1,5 +1,7 @@
 import { addCityAction, deleteCityAction, changeActiveCityAction } from './clock';
-import { startStopwatchAction, resetStopwatchAction, splitStopwatchAction } from './stopwatch';
+import {
+  startStopwatchAction, resetStopwatchAction, splitStopwatchAction, changeStopwatchAction,
+} from './stopwatch';
 import { startPomodoroAction, stopPomodoroAction, nextPomodoroAction } from './pomodoro';
 import {
   addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
@@ -16,7 +18,7 @@ const changeLangAction = () => ({
 export {
   changeLangAction, changeThemeAction,
   addCityAction, deleteCityAction, changeActiveCityAction,
-  startStopwatchAction, resetStopwatchAction, splitStopwatchAction,
+  startStopwatchAction, resetStopwatchAction, splitStopwatchAction, changeStopwatchAction,
   startPomodoroAction, stopPomodoroAction, nextPomodoroAction,
   addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
 };

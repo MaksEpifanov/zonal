@@ -10,6 +10,7 @@ export const splitStopwatchAction = () => ({
   type: 'SPLIT_STOPWATCH',
 });
 
-export const changeStopwatchAction = () => ({
+export const changeStopwatchAction = (time) => ({
   type: 'CHANGE_STOPWATCH',
+  payload: time,
 });

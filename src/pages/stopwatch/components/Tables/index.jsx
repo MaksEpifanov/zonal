@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
+import { useMemo } from 'react';
+import { formatTime } from 'pages/stopwatch/utils';
 import styles from './Tables.module.scss';
 
-const Tables = ({ columns, data }) => {
+const Tables = ({ data }) => {
+  const columns = useMemo(() => ([
+    { title: '№' },
+    { title: 'Interval' },
+    { title: 'Total' },
+  ]), []);
+
   const thead = (
     <thead>
       <tr>
@@ -21,8 +29,8 @@ const Tables = ({ columns, data }) => {
       {data.map((row) => (
         <tr key={row.id}>
           <td>{row.id}</td>
-          <td>{row.interval}</td>
-          <td>{row.total}</td>
+          <td>{formatTime(row.lap)}</td>
+          <td>{formatTime(row.total)}</td>
         </tr>
       ))}
     </tbody>
@@ -39,15 +47,18 @@ const Tables = ({ columns, data }) => {
 export default Tables;
 
 Tables.propTypes = {
-  columns: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    width: PropTypes.number,
-    map: PropTypes.func,
-  })).isRequired,
   data: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
-    interval: PropTypes.string,
-    total: PropTypes.string,
+    interval: PropTypes.shape({
+      min: PropTypes.number,
+      sec: PropTypes.number,
+      ms: PropTypes.number,
+    }),
+    total: PropTypes.shape({
+      min: PropTypes.number,
+      sec: PropTypes.number,
+      ms: PropTypes.number,
+    }),
     map: PropTypes.func,
   })).isRequired,
 };

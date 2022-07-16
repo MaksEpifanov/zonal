@@ -8,11 +8,13 @@ const cx = classNames.bind(styles);
 const Displays = ({ isActive, children }) => {
   const className = cx({
     Displays: true,
-    display_active: isActive,
+    Displays_active: isActive,
   });
 
   return (
-    <div className={className}>{children}</div>
+    <div className={className}>
+      {children}
+    </div>
   );
 };
 

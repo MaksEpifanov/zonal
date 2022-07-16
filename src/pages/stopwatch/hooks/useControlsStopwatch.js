@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { StoreContext } from 'store/Store';
 import { startStopwatchAction, splitStopwatchAction, resetStopwatchAction } from 'store/actions';
 
-const useStopwatch = () => {
+const useControlsStopwatch = () => {
   const [{ stopwatch }, dispatch] = useContext(StoreContext);
 
   const startStopwatch = () => dispatch(startStopwatchAction());
@@ -12,4 +12,4 @@ const useStopwatch = () => {
   return [stopwatch.info, startStopwatch, splitStopwatch, resetStopwatch];
 };
 
-export default useStopwatch;
+export default useControlsStopwatch;

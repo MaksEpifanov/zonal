@@ -1,13 +1,16 @@
-import { useContext } from 'react';
+import { useContext, useCallback } from 'react';
 import { StoreContext } from 'store/Store';
-import { startStopwatchAction } from 'store/actions';
+import { changeStopwatchAction } from 'store/actions';
 
-const useStopwatch = () => {
+const useDisplayStopwatch = () => {
   const [{ stopwatch }, dispatch] = useContext(StoreContext);
 
-  const startStopwatch = () => dispatch(startStopwatchAction());
+  const changeStopwatch = useCallback(
+    (time) => dispatch(changeStopwatchAction(time)),
+    [dispatch],
+  );
 
-  return [stopwatch.info, startStopwatch];
+  return [stopwatch.info, stopwatch.time, stopwatch.laps, changeStopwatch];
 };
 
-export default useStopwatch;
+export default useDisplayStopwatch;

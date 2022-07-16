@@ -11,17 +11,13 @@
   border-radius: 15px;
 
   font-size: var(--text-md);
-  font-family: var(--second-font);
+  font-family: var(--main-font);
+  font-weight: bold;
 
-  &.display {
-    &_active {
-      background: var(--active-color);
+  &_active {
+    background: var(--active-color);
 
-      color: black;
-      font-size: var(--text-base-size);
-      font-family: var(--main-font);
-      font-weight: bold;
-    }
+    color: black;
+    font-size: var(--text-base-size);
   }
-
 }

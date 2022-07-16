@@ -55,6 +55,18 @@
     transform: scale(1.04);
   }
 
+  &:disabled {
+    cursor: default;
+    color: var(--gray-color);
+    transform: none;
+
+    .Button__icon {
+      svg {
+        fill: var(--gray-color);
+      }
+    }
+  }
+
   &__icon {
     height: 62px;
     width: 62px;
