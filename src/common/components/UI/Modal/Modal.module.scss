@@ -14,8 +14,8 @@
 
   .content {
     padding: 40px 50px;
-    width: 70%;
-    height: 70%;
+    width: 96vw;
+    height: 90vh;
     background-color: var(--background-color);
     border: 4px solid var(--foreground-color);
     border-radius: 20px;
@@ -42,9 +42,13 @@
       position: absolute;
       top: 15px;
       right: 15px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
 
-    >*:not(.modal__close) {
+    >*:not(.content__close) {
       min-width: 290px;
       max-width: 600px;
       width: 50%;
@@ -66,22 +70,28 @@
 
     overflow: hidden;
 
-    .modal {
-      &__content {
-        width: 98%;
-        height: 85%;
-        padding: 40px 20px;
 
-        margin-bottom: 10%;
-        background-color: var(--background-color);
-        border: 4px solid var(--foreground-color);
-        border-radius: 20px;
+    .content {
+      width: 98%;
+      height: 85%;
+      padding: 40px 20px;
 
-        color: var(--foreground-color);
-        font-size: 2rem;
+      margin-bottom: 10%;
+      background-color: var(--background-color);
+      border: 4px solid var(--foreground-color);
+      border-radius: 20px;
 
-        position: relative;
+      color: var(--foreground-color);
+      font-size: 2rem;
+
+      position: relative;
+
+      >*:not(.content__close) {
+        min-width: 290px;
+        max-width: 600px;
+        width: 80%;
       }
     }
+
   }
 }
