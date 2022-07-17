@@ -19,13 +19,18 @@ const initialState = {
     laps: [],
   },
   pomodoro: {
-    timeFocus: 25,
-    timeShortBreak: 5,
-    timeLongBreak: 15,
-    isFocus: true,
-    isShortBreak: false,
-    isLongBreak: false,
+    timer: 25 * 60,
     lap: 0,
+    status: {
+      isTimerOn: false,
+      timerMode: 'focus',
+    },
+    settings: {
+      timerFocus: 25,
+      timerShortBreak: 5,
+      timerLongBreak: 15,
+      sound: true,
+    },
   },
   todo: {
     lists: [
