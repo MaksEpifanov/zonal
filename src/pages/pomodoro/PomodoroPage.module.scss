@@ -4,6 +4,10 @@
   justify-content: flex-start;
   align-items: center;
 
+  &>*:not(:last-child) {
+    margin-bottom: 40px;
+  }
+
   .progress {
     width: 100%;
     height: 14px;
@@ -27,12 +31,13 @@
     max-width: 600px;
     max-height: 600px;
 
-
     display: flex;
     flex-direction: column;
 
     &>*:first-child {
       height: 230px;
+      font-size: var(--text-xl);
+      margin-bottom: 10px;
     }
 
     &__sub {
@@ -40,6 +45,7 @@
       height: 54px;
 
       &>*:last-child {
+        margin-left: 5px;
         width: 54px;
         font-size: var(--text-base-size);
         background-color: #212D3F;
@@ -55,22 +61,23 @@
     display: flex;
     justify-content: center;
 
-    &__mainBtn {}
+    &__mainBtn {
+      width: 100%;
+      margin-right: 20px;
+    }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .PomodoroPage {
     .controls {
-
-      min-width: 0;
-
       position: absolute;
       bottom: 140px;
 
       z-index: 13;
 
       &__mainBtn {
+        width: auto;
         position: fixed;
         bottom: calc(90px - 37px);
         left: calc(50% - 37px);
