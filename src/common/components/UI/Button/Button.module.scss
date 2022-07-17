@@ -171,6 +171,10 @@
       }
     }
 
+    &__primary:hover {
+      box-shadow: none;
+    }
+
     &:not(&__item, &_no-response) {
       width: 62px;
     }

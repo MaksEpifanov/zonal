@@ -16,7 +16,7 @@ const Button = ({
     Button__item: item,
     Button__item_active: active,
     Button__primary: primary,
-    className: !!className,
+    [className]: !!className,
   });
 
   const btnIcon = !item ? (
