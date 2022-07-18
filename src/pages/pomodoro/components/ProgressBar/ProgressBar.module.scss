@@ -1,0 +1,14 @@
+.ProgressBar {
+  border-radius: 10px;
+
+  &::-moz-progress-bar,
+  ::-webkit-progress-bar {
+    border-radius: 10px;
+  }
+
+  &[value] {
+    &::-webkit-progress-value {
+      border-radius: 10px;
+    }
+  }
+}

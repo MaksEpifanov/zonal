@@ -1,0 +1,24 @@
+.PomodoroDisplay {
+  display: flex;
+  flex-direction: column;
+
+  &>*:first-child {
+    height: 230px;
+    font-size: var(--text-xl);
+    margin-bottom: 10px;
+  }
+
+  &__sub {
+    display: flex;
+    height: 54px;
+
+    &>*:last-child {
+      margin-left: 5px;
+      width: 54px;
+      font-size: var(--text-base-size);
+      background-color: #212D3F;
+      color: #EEEEEE;
+
+    }
+  }
+}
