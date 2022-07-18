@@ -3,12 +3,12 @@ import { StoreContext } from 'store/Store';
 import { toggleTimerStatusAction, changeTimerModeAction } from 'store/actions';
 
 const useControlPomodoro = () => {
-  const [{ pomodoro: status }, dispatch] = useContext(StoreContext);
+  const [{ pomodoro }, dispatch] = useContext(StoreContext);
 
   const toggleTimerStatus = () => dispatch(toggleTimerStatusAction());
-  const changeTimerMode = () => dispatch(changeTimerModeAction());
+  const changeTimerMode = (mode) => dispatch(changeTimerModeAction(mode));
 
-  return [status, toggleTimerStatus, changeTimerMode];
+  return [pomodoro.status, pomodoro.lap, toggleTimerStatus, changeTimerMode];
 };
 
 export default useControlPomodoro;

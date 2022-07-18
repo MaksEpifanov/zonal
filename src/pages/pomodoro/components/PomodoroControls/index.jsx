@@ -3,6 +3,10 @@ import classNamesBind from 'classnames/bind';
 
 import Button from 'common/components/UI/Button';
 import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
+import { ReactComponent as PauseSVG } from 'assets/icons/pause.svg';
+
+import useControlPomodoro from '../../hooks/useControlPomodoro';
+import { getMode } from '../../utils/index';
 
 import styles from './PomodoroControls.module.scss';
 
@@ -13,12 +17,28 @@ const PomodoroControls = ({ className }) => {
     PomodoroControls,
     [className]: !!className,
   });
+
+  const [status, lap, toggleTimerStatus, changeTimerMode] = useControlPomodoro();
+
+  const setMode = () => {
+    const timerMode = getMode(status.timerMode, lap);
+    changeTimerMode(timerMode);
+  };
+
+  const PrimaryButton = (
+    <Button
+      primary
+      onClick={toggleTimerStatus}
+      icon={status.isTimerOn ? <PauseSVG /> : undefined}
+      value={status.isTimerOn ? 'pause' : undefined}
+    />
+  );
   return (
     <div className={classNames}>
       <div className={styles.PomodoroControls__mainBtn}>
-        <Button primary />
+        {PrimaryButton}
       </div>
-      <Button icon={<NextSVG />} value="next" />
+      <Button icon={<NextSVG />} value="next" onClick={setMode} />
     </div>
   );
 };
