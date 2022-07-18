@@ -9,7 +9,7 @@ const useDisplayPomodoro = () => {
 
   const countTimer = () => dispatch(countTimerAction());
   const countLap = () => dispatch(countLapAction());
-  const changeTimerMode = () => dispatch(changeTimerModeAction());
+  const changeTimerMode = (mode) => dispatch(changeTimerModeAction(mode));
   const resetTimer = () => dispatch(resetTimerAction());
 
   return [pomodoro.timer, pomodoro.lap, countTimer, countLap, changeTimerMode, resetTimer];

@@ -101,7 +101,7 @@ const pomodoroReducer = (state, action) => {
             },
           };
         }
-        case 'short-break': {
+        case 'short break': {
           return {
             ...state,
             pomodoro: {
@@ -110,7 +110,7 @@ const pomodoroReducer = (state, action) => {
             },
           };
         }
-        case 'long-break': {
+        case 'long break': {
           return {
             ...state,
             pomodoro: {

@@ -18,11 +18,12 @@ const PomodoroControls = ({ className }) => {
     [className]: !!className,
   });
 
-  const [status, lap, toggleTimerStatus, changeTimerMode] = useControlPomodoro();
+  const [status, lap, toggleTimerStatus, changeTimerMode, resetTimer] = useControlPomodoro();
 
   const setMode = () => {
     const timerMode = getMode(status.timerMode, lap);
     changeTimerMode(timerMode);
+    resetTimer();
   };
 
   const PrimaryButton = (
