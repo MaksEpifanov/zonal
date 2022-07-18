@@ -12,3 +12,9 @@ export const formatTimer = (time) => {
 
   return `${mins}:${sec}`;
 };
+
+export const getMaxTime = (mode, timerInSettings) => {
+  if (mode === 'short break') return timerInSettings.timerShortBreak * 60;
+  if (mode === 'long break') return timerInSettings.timerLongBreak * 60;
+  return timerInSettings.timerFocus * 60;
+};
