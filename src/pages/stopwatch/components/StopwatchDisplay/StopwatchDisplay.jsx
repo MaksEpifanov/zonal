@@ -39,6 +39,7 @@ const StopwatchDisplay = () => {
   useEffect(() => {
     let timerId;
     if (isStart) {
+      clearInterval(timerId);
       timerId = setInterval(tick, 10);
     }
     return () => clearInterval(timerId);

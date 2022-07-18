@@ -1,6 +1,6 @@
 const pomodoroReducer = (state, action) => {
   switch (action.type) {
-    case 'CHANGE_TIMER_POMODORO': {
+    case 'COUNT_TIMER_POMODORO': {
       return {
         ...state,
         pomodoro: {
@@ -9,7 +9,7 @@ const pomodoroReducer = (state, action) => {
         },
       };
     }
-    case 'CHANGE_LAP_POMODORO': {
+    case 'COUNT_LAP_POMODORO': {
       return {
         ...state,
         pomodoro: {
@@ -42,7 +42,7 @@ const pomodoroReducer = (state, action) => {
         },
       };
     }
-    case 'CHANGE_SETTINGS_FOCUS': {
+    case 'CHANGE_SETTINGS_FOCUS_TIME': {
       return {
         ...state,
         pomodoro: {

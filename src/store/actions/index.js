@@ -1,8 +1,21 @@
 import { addCityAction, deleteCityAction, changeActiveCityAction } from './clock';
+
 import {
   startStopwatchAction, resetStopwatchAction, splitStopwatchAction, changeStopwatchAction,
 } from './stopwatch';
-import { startPomodoroAction, stopPomodoroAction, nextPomodoroAction } from './pomodoro';
+
+import {
+  countTimerAction,
+  countLapAction,
+  toggleTimerStatusAction,
+  changeTimerModeAction,
+  changeSettingsFocusTimeAction,
+  changeSettingsShortBreakTimeAction,
+  changeSettingsLongBreakTimeAction,
+  toggleSettingsSoundAction,
+  resetTimerAction,
+} from './pomodoro';
+
 import {
   addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
 } from './todo';
@@ -16,9 +29,20 @@ const changeLangAction = () => ({
 });
 
 export {
+  // common actions
   changeLangAction, changeThemeAction,
+
+  // clock actions
   addCityAction, deleteCityAction, changeActiveCityAction,
+
+  // stopwatch actions
   startStopwatchAction, resetStopwatchAction, splitStopwatchAction, changeStopwatchAction,
-  startPomodoroAction, stopPomodoroAction, nextPomodoroAction,
+
+  // pomodoro actions
+  countTimerAction, countLapAction, toggleTimerStatusAction, changeTimerModeAction,
+  changeSettingsFocusTimeAction, changeSettingsShortBreakTimeAction,
+  changeSettingsLongBreakTimeAction, toggleSettingsSoundAction, resetTimerAction,
+
+  // todo actions
   addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
 };
