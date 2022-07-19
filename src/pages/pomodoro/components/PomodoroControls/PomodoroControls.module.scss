@@ -1,10 +1,33 @@
 .PomodoroControls {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 
-  &__mainBtn {
+  &__upBtns {
+    display: flex;
     width: 100%;
-    margin-right: 20px;
+
+    margin-bottom: 20px;
+
+    &>* {
+      width: 100%;
+    }
+
+    &>*:not(:first-child) {
+      width: 100%;
+      margin-left: 20px;
+    }
+
+  }
+
+  &__downBtns {
+    display: flex;
+    width: 100%;
+
+    &>*:not(:first-child) {
+      width: 100%;
+      margin-left: 20px;
+    }
   }
 }
 
@@ -13,8 +36,32 @@
   .PomodoroControls {
     position: absolute;
     bottom: 140px;
+    flex-wrap: nowrap;
 
     z-index: 13;
+
+    &__upBtns {
+      display: flex;
+      width: auto;
+
+      margin-bottom: 0;
+      margin-right: 20px;
+
+      &>*:not(:first-child) {
+        width: 62px;
+        margin-left: 0;
+      }
+    }
+
+    &__downBtns {
+      display: flex;
+      width: auto;
+
+      &>*:not(:first-child) {
+        width: 62px;
+        margin-left: 20px;
+      }
+    }
 
     &__mainBtn {
       width: auto;
