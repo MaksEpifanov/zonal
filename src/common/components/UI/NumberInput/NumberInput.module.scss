@@ -1,0 +1,16 @@
+.NumberInput {
+
+  label {}
+
+  input {
+    max-width: 60%;
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: var(--foreground-color);
+    color: var(--background-color);
+
+    font-size: var(--text-base-size);
+  }
+}

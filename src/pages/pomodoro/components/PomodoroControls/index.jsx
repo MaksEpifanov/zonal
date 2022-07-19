@@ -4,13 +4,10 @@ import classNamesBind from 'classnames/bind';
 import Button from 'common/components/UI/Button';
 import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
 import { ReactComponent as PauseSVG } from 'assets/icons/pause.svg';
-import { ReactComponent as SoundSVG } from 'assets/icons/sound.svg';
-import { ReactComponent as MuteSVG } from 'assets/icons/mute.svg';
-import { ReactComponent as OptionsSVG } from 'assets/icons/options.svg';
 
-import useSettingsPomodoro from 'pages/pomodoro/hooks/useSettingsPomodoro';
 import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
 import { getMode } from 'pages/pomodoro/utils/index';
+import PomodoroOptions from '../PomodoroOptions';
 
 import styles from './PomodoroControls.module.scss';
 
@@ -23,7 +20,6 @@ const PomodoroControls = ({ className }) => {
   });
 
   const [status, lap, toggleTimerStatus, changeTimerMode, resetTimer] = useControlPomodoro();
-  const [settings, , , , toggleSound] = useSettingsPomodoro();
 
   const setMode = () => {
     const timerMode = getMode(status.timerMode, lap);
@@ -40,14 +36,6 @@ const PomodoroControls = ({ className }) => {
     />
   );
 
-  const SoundButton = (
-    <Button
-      onClick={toggleSound}
-      value={settings.sound ? 'sound on' : 'sound off'}
-      icon={settings.sound ? <SoundSVG /> : <MuteSVG />}
-    />
-  );
-
   return (
     <div className={classNames}>
       <div className={styles.PomodoroControls__upBtns}>
@@ -56,10 +44,7 @@ const PomodoroControls = ({ className }) => {
         </div>
         <Button icon={<NextSVG />} value="next" onClick={setMode} />
       </div>
-      <div className={styles.PomodoroControls__downBtns}>
-        <Button value="Options" icon={<OptionsSVG />} disabled={status.isTimerOn} />
-        {SoundButton}
-      </div>
+      <PomodoroOptions className={styles.PomodoroControls__downBtns} disabled={status.isTimerOn} />
     </div>
   );
 };

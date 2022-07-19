@@ -5,14 +5,24 @@ import {
   changeSettingsShortBreakTimeAction,
   changeSettingsLongBreakTimeAction,
   toggleSettingsSoundAction,
+  resetTimerAction,
 } from 'store/actions';
 
 const useSettingsPomodoro = () => {
   const [{ pomodoro }, dispatch] = useContext(StoreContext);
 
-  const changeFocusTime = () => dispatch(changeSettingsFocusTimeAction());
-  const changeShortBreakTime = () => dispatch(changeSettingsShortBreakTimeAction());
-  const changeLongBreakTime = () => dispatch(changeSettingsLongBreakTimeAction());
+  const changeFocusTime = (time) => {
+    dispatch(changeSettingsFocusTimeAction(time));
+    dispatch(resetTimerAction());
+  };
+  const changeShortBreakTime = (time) => {
+    dispatch(changeSettingsShortBreakTimeAction(time));
+    dispatch(resetTimerAction());
+  };
+  const changeLongBreakTime = (time) => {
+    dispatch(changeSettingsLongBreakTimeAction(time));
+    dispatch(resetTimerAction());
+  };
   const toggleSound = () => dispatch(toggleSettingsSoundAction());
 
   return [pomodoro.settings,
