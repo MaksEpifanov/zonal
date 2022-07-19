@@ -4,7 +4,7 @@ import classNamesBind from 'classnames/bind';
 import useSettingsPomodoro from 'pages/pomodoro/hooks/useSettingsPomodoro';
 import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
 import useDisplayPomodoro from 'pages/pomodoro/hooks/useDisplayPomodoro';
-import { getMaxTime } from 'pages/pomodoro/utils';
+import { formatTimeToPercent } from 'pages/pomodoro/utils';
 
 import styles from './ProgressBar.module.scss';
 
@@ -20,8 +20,12 @@ const ProgressBar = ({ className }) => {
   const [settings] = useSettingsPomodoro();
   const [status] = useControlPomodoro();
 
+  const widthBar = formatTimeToPercent(timer, settings, status.timerMode);
+
   return (
-    <progress max={getMaxTime(status.timerMode, settings)} value={timer} className={classNames} />
+    <div className={classNames}>
+      <div className={styles.ProgressBar__bar} style={{ width: widthBar }} />
+    </div>
   );
 };
 export default ProgressBar;

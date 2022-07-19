@@ -13,8 +13,12 @@ export const formatTimer = (time) => {
   return `${mins}:${sec}`;
 };
 
-export const getMaxTime = (mode, timerInSettings) => {
-  if (mode === 'short break') return timerInSettings.timerShortBreak * 60;
-  if (mode === 'long break') return timerInSettings.timerLongBreak * 60;
-  return timerInSettings.timerFocus * 60;
+export const formatTimeToPercent = (timer, timerInSettings, mode) => {
+  let maxTimer;
+  if (mode === 'short break') maxTimer = timerInSettings.timerShortBreak * 60;
+  if (mode === 'long break') maxTimer = timerInSettings.timerLongBreak * 60;
+  if (mode === 'focus') maxTimer = timerInSettings.timerFocus * 60;
+
+  const resultPercent = (+timer / (+maxTimer / 100)).toFixed(1);
+  return `${resultPercent}%`;
 };
