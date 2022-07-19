@@ -19,7 +19,7 @@ const NumberInput = ({
     <div className={classNames}>
       <label htmlFor={type}>
         <div className={styles.NumberInput__label}>{type}</div>
-        <input type="number" name={type} id={type} value={value} max={max} min={min} onChange={(e) => onChange(e.target.value)} />
+        <input type="number" name={type} id={type} value={String(value)} max={max} min={min} onChange={(e) => onChange(e.target.value)} />
       </label>
     </div>
   );

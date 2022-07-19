@@ -24,7 +24,14 @@ const PomodoroOptions = ({ className, disabled }) => {
   return (
     <div className={classNames}>
       <Button value="Options" icon={<OptionsSVG />} onClick={onViewModal} disabled={disabled} />
-      <Modal isOpen={isOpenModal} handleClose={onViewModal}><OptionsInModal /></Modal>
+      <Modal
+        className={styles.PomodoroOptions__zi}
+        isOpen={isOpenModal}
+        handleClose={onViewModal}
+      >
+        <OptionsInModal />
+
+      </Modal>
     </div>
   );
 };

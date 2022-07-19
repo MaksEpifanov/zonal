@@ -1,16 +1,28 @@
 .NumberInput {
 
-  label {}
+  &__label {
+    margin-bottom: 5px;
+  }
 
   input {
-    max-width: 60%;
-    height: 40px;
+    width: 100%;
     padding: 10px;
     border-radius: 10px;
     border: none;
-    background: var(--foreground-color);
-    color: var(--background-color);
 
     font-size: var(--text-base-size);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      height: 21px;
+      width: 14px;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    &::-webkit-outer-spin-button:hover,
+    &::-webkit-inner-spin-button:hover {
+      opacity: 1;
+    }
   }
 }

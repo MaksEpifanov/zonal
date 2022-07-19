@@ -4,3 +4,12 @@
     font-size: var(--text-base-size);
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .PomodoroOptions {
+
+    &__zi {
+      z-index: 999;
+    }
+  }
+}
