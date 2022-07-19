@@ -6,6 +6,7 @@ import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
 import { ReactComponent as PauseSVG } from 'assets/icons/pause.svg';
 import { ReactComponent as SoundSVG } from 'assets/icons/sound.svg';
 import { ReactComponent as MuteSVG } from 'assets/icons/mute.svg';
+import { ReactComponent as OptionsSVG } from 'assets/icons/options.svg';
 
 import useSettingsPomodoro from 'pages/pomodoro/hooks/useSettingsPomodoro';
 import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
@@ -56,7 +57,7 @@ const PomodoroControls = ({ className }) => {
         <Button icon={<NextSVG />} value="next" onClick={setMode} />
       </div>
       <div className={styles.PomodoroControls__downBtns}>
-        <Button value="Options" />
+        <Button value="Options" icon={<OptionsSVG />} disabled={status.isTimerOn} />
         {SoundButton}
       </div>
     </div>
