@@ -1,6 +1,6 @@
-export const addListAction = (data) => ({
+export const addListAction = (list) => ({
   type: 'ADD_LIST',
-  payload: data,
+  payload: list,
 });
 
 export const deleteListAction = (id) => ({
@@ -8,9 +8,9 @@ export const deleteListAction = (id) => ({
   payload: id,
 });
 
-export const addTodoAction = (data) => ({
+export const addTodoAction = (todo) => ({
   type: 'ADD_TODO',
-  payload: data,
+  payload: todo,
 });
 
 export const deleteTodoAction = (id) => ({

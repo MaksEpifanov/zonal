@@ -33,12 +33,26 @@ const initialState = {
     },
   },
   todo: {
+    activeList: 'all',
     lists: [
-      { orderNum: 0, id: 0, name: 'All' },
+      {
+        id: 0, name: 'all',
+      },
+      { id: 1, name: 'home' },
+      { id: 2, name: 'work' },
     ],
     todos: [
       {
-        orderNum: 0, idList: 0, id: 0, isCompleted: false, task: 'Example todo',
+        idList: 0, id: 0, isCompleted: false, task: 'Новая задача (без листа)',
+      },
+      {
+        idList: 1, id: 1, isCompleted: false, task: 'Помыть посуду',
+      },
+      {
+        idList: 2, id: 2, isCompleted: true, task: 'Обусдить с колегой что-нибудь',
+      },
+      {
+        idList: 0, id: 0, isCompleted: true, task: 'Еще одна задача (без листа)',
       },
     ],
   },
