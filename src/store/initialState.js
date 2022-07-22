@@ -33,7 +33,7 @@ const initialState = {
     },
   },
   todo: {
-    activeList: 'all',
+    activeList: 0,
     lists: [
       {
         id: 0, name: 'all',
