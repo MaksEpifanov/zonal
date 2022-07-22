@@ -15,6 +15,7 @@ const Lists = ({ className }) => {
 
   const labelList = lists.map((list) => (
     <Button
+      key={list.id}
       item
       noResponse
       onClick={() => changeActiveList(list.id)}

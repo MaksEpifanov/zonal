@@ -52,7 +52,7 @@ const initialState = {
         idList: 2, id: 2, isCompleted: true, task: 'Обусдить с колегой что-нибудь',
       },
       {
-        idList: 0, id: 0, isCompleted: true, task: 'Еще одна задача (без листа)',
+        idList: 0, id: 3, isCompleted: true, task: 'Еще одна задача (без листа)',
       },
     ],
   },
