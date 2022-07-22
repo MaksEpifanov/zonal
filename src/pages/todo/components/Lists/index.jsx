@@ -2,10 +2,28 @@ import PropTypes from 'prop-types';
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
 import Button from 'common/components/UI/Button';
 
+import useLists from 'pages/todo/hooks/useLists';
+import useActiveLists from 'pages/todo/hooks/useActiveList';
+
 import styles from './Lists.module.scss';
 
 const Lists = ({ className }) => {
   const classNames = `${styles.Lists} ${className}`;
+
+  const [lists, , deleteList] = useLists();
+  const [activeList, changeActiveList] = useActiveLists();
+
+  const labelList = lists.map((list) => (
+    <Button
+      item
+      noResponse
+      onClick={() => changeActiveList(list.id)}
+      value={list.name}
+      active={activeList === list.id}
+      onDelete={() => list.id !== 0 && deleteList(list.id)}
+    />
+  ));
+
   return (
     <div className={classNames}>
       <div className={styles.header}>
@@ -13,9 +31,7 @@ const Lists = ({ className }) => {
         <AddSVG className={styles.header__addBtn} />
       </div>
       <div className={styles.lists}>
-        <Button item noResponse onClick={() => {}} value="all" />
-        <Button item noResponse onClick={() => {}} value="Home" />
-        <Button item noResponse onClick={() => {}} value="Work" active />
+        {labelList}
       </div>
     </div>
   );
