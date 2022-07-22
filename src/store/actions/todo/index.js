@@ -8,6 +8,11 @@ export const deleteListAction = (id) => ({
   payload: id,
 });
 
+export const changeActiveListAction = (id) => ({
+  type: 'CHANGE_ACTIVE_LIST',
+  payload: id,
+});
+
 export const addTodoAction = (todo) => ({
   type: 'ADD_TODO',
   payload: todo,

@@ -18,6 +18,15 @@ const todoReducer = (state, action) => {
         },
       };
     }
+    case 'CHANGE_ACTIVE_LIST': {
+      return {
+        ...state,
+        todo: {
+          ...state.todo,
+          activeList: action.payload,
+        },
+      };
+    }
     case 'ADD_TODO': {
       return {
         ...state,

@@ -5,13 +5,13 @@ import {
   deleteListAction,
 } from 'store/actions';
 
-const useControlsStopwatch = () => {
+const useLists = () => {
   const [{ todo }, dispatch] = useContext(StoreContext);
 
   const addList = (list) => dispatch(addListAction(list));
   const deleteList = (id) => dispatch(deleteListAction(id));
 
-  return [todo.lists, todo.activeList, addList, deleteList];
+  return [todo.lists, addList, deleteList];
 };
 
-export default useControlsStopwatch;
+export default useLists;

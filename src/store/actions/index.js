@@ -17,7 +17,11 @@ import {
 } from './pomodoro';
 
 import {
-  addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
+  addTodoAction,
+  deleteTodoAction,
+  changeActiveListAction,
+  addListAction, deleteListAction,
+  completeTodoAction,
 } from './todo';
 
 const changeThemeAction = () => ({
@@ -44,5 +48,6 @@ export {
   changeSettingsLongBreakTimeAction, toggleSettingsSoundAction, resetTimerAction,
 
   // todo actions
-  addTodoAction, deleteTodoAction, addListAction, deleteListAction, completeTodoAction,
+  addTodoAction, deleteTodoAction, completeTodoAction,
+  addListAction, deleteListAction, changeActiveListAction,
 };
