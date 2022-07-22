@@ -15,19 +15,26 @@ const AddTodo = ({ className }) => {
   const [todos, addTodo] = useTodos();
   const [activeList] = useActiveLists();
 
-  const onAdd = () => {
-    const maxId = todos.reduce((acc, curr) => (acc > curr.id ? acc : curr.id), 0);
-    const newTodo = {
-      id: maxId + 1, idList: activeList, task: inputText, isCompleted: false,
-    };
+  const maxId = todos.reduce((acc, curr) => (acc > curr.id ? acc : curr.id), 0);
+  const newTodo = {
+    id: maxId + 1, idList: activeList, task: inputText, isCompleted: false,
+  };
 
+  const onAdd = () => {
     addTodo(newTodo);
     setInputText('');
   };
 
   return (
     <div className={classNames}>
-      <input className={styles.input} type="text" placeholder="Click to add task" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+      <input
+        className={styles.input}
+        type="text"
+        placeholder="Click to add task"
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        onKeyDown={(e) => e.code === 'Enter' && onAdd()}
+      />
       <ArrowSVG className={styles.arrow} type="button" onClick={onAdd} />
     </div>
   );
