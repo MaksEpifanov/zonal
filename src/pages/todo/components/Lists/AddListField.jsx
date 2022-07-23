@@ -36,7 +36,7 @@ const AddListField = ({ className }) => {
     }
     return (
       <TextInput
-        placeholder="Click to input new list"
+        placeholder="Input new list"
         onSubmit={onSubmit}
         submitButton={<AddSVG />}
         onEmptySubmit={() => setHiddenInput((prevState) => !prevState)}

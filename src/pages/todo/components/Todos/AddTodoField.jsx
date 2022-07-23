@@ -26,9 +26,9 @@ const AddTodoField = ({ className }) => {
   return (
     <TextInput
       className={classNames}
+      placeholder="Click to add task"
       submitButton={<ArrowSVG />}
       onSubmit={onSubmit}
-      placeholder="Click to input task"
     />
   );
 };

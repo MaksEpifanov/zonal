@@ -1,6 +1,8 @@
-import PropTypes from 'prop-types';
 import { useMemo } from 'react';
-import formatTime from 'pages/stopwatch/utils';
+import PropTypes from 'prop-types';
+
+import { formatTime } from 'pages/stopwatch/utils';
+
 import styles from './Tables.module.scss';
 
 const Tables = ({ data }) => {

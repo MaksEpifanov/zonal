@@ -1,11 +1,12 @@
-import { useEffect, useCallback, memo } from 'react';
+import { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
 import Displays from 'common/components/UI/Displays';
 import Tables from 'pages/stopwatch/components/Tables';
-import formatTime from 'pages/stopwatch/utils';
-import useDisplayStopwatch from '../../hooks/useDisplayStopwatch';
+
+import { formatTime, getNewTimes } from 'pages/stopwatch/utils';
+import useDisplayStopwatch from 'pages/stopwatch/hooks/useDisplayStopwatch';
 
 import styles from './StopwatchDisplay.module.scss';
 
@@ -17,35 +18,12 @@ const StopwatchDisplay = ({ className }) => {
     [className]: !!className,
   });
 
-  const [info, times, laps, setTime] = useDisplayStopwatch();
-  const { main, lap } = times;
-  const { isStart } = info;
+  const [{ isStart }, times, laps, setTime] = useDisplayStopwatch();
 
   const tick = useCallback(() => {
-    let { min, sec, ms } = main;
-    let { min: minLap, sec: secLap, ms: msLap } = lap;
-    ms += 10;
-    msLap += 10;
-    if (ms >= 1000) {
-      sec += 1;
-      ms = 0;
-    }
-    if (msLap >= 1000) {
-      secLap += 1;
-      msLap = 0;
-    }
-    if (sec >= 60) {
-      min += 1;
-      sec = 0;
-    }
-    if (secLap >= 60) {
-      minLap += 1;
-      secLap = 0;
-    }
-
-    const resObj = { main: { min, sec, ms }, lap: { min: minLap, sec: secLap, ms: msLap } };
-    setTime(resObj);
-  }, [main, lap, setTime]);
+    const newTimes = getNewTimes(times);
+    setTime(newTimes);
+  }, [times, setTime]);
 
   useEffect(() => {
     let timerId;
@@ -59,19 +37,15 @@ const StopwatchDisplay = ({ className }) => {
   return (
     <div className={classNames}>
       <div className={styles.timers}>
-        <Displays value={formatTime(main)} />
-        <div className={styles.timers__second}>
-          <Displays isActive value={formatTime(lap)} />
-        </div>
+        <Displays value={formatTime(times.main)} />
+        <Displays isActive className={styles.timers__second} value={formatTime(times.lap)} />
       </div>
-      <div className={styles.tables}>
-        {laps.length ? <Tables data={laps} /> : null }
-      </div>
+      {laps.length ? <Tables data={laps} /> : null }
     </div>
   );
 };
 
-export default memo(StopwatchDisplay);
+export default StopwatchDisplay;
 
 StopwatchDisplay.propTypes = {
   className: PropTypes.string,

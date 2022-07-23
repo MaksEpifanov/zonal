@@ -7,9 +7,9 @@ const cx = classNamesBind.bind(styles);
 
 const Displays = ({ className, isActive, value }) => {
   const classNames = cx({
-    [className]: !!className,
     Displays: true,
     Displays_active: isActive,
+    [className]: !!className,
   });
 
   return (
