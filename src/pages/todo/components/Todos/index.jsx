@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
-import useTodos from 'pages/todo/hooks/useTodos';
-import useLists from 'pages/todo/hooks/useLists';
+import { useTodos, useActiveLists, useLists } from 'pages/todo/hooks';
 
 import TodoItem from '../TodoItem';
 import AddTodoField from './AddTodoField';
@@ -13,23 +12,45 @@ const Todos = ({ className }) => {
 
   const [todos, , deleteTodo, completeTodo] = useTodos();
   const [lists] = useLists();
+  const [activeList] = useActiveLists();
 
-  const labelTodos = todos.map((todo) => (
-    <TodoItem
-      key={todo.id}
-      id={todo.id}
-      text={todo.task}
-      list={lists.filter((list) => list.id === todo.idList)[0].name}
-      isChecked={todo.isCompleted}
-      onCheck={() => completeTodo(todo.id)}
-      onDelete={() => deleteTodo(todo.id)}
-    />
-  ));
+  const labelActiveTodos = todos
+    .filter((todo) => (activeList === 0
+      ? !todo.isCompleted
+      : !todos.isCompleted && todo.idList === activeList))
+    .map((todo) => (
+      <TodoItem
+        key={todo.id}
+        id={todo.id}
+        text={todo.task}
+        list={lists.filter((list) => list.id === todo.idList)[0].name}
+        isChecked={todo.isCompleted}
+        onCheck={() => completeTodo(todo.id)}
+        onDelete={() => deleteTodo(todo.id)}
+      />
+    ));
+
+  const labelComoletedTodos = todos
+    .filter((todo) => (activeList === 0
+      ? todo.isCompleted
+      : todos.isCompleted && todo.idList === activeList))
+    .map((todo) => (
+      <TodoItem
+        key={todo.id}
+        id={todo.id}
+        text={todo.task}
+        list={lists.filter((list) => list.id === todo.idList)[0].name}
+        isChecked={todo.isCompleted}
+        onCheck={() => completeTodo(todo.id)}
+        onDelete={() => deleteTodo(todo.id)}
+      />
+    ));
 
   return (
     <div className={classNames}>
       <AddTodoField className={styles.Todos_newTodoFild} />
-      {labelTodos}
+      {labelActiveTodos}
+      {labelComoletedTodos}
     </div>
   );
 };
