@@ -16,7 +16,8 @@
   }
 
   &__todos {
-    padding: 20px 10px;
+    width: 100%;
+    padding: 20px 20px 10px 10px;
   }
 
   &__openBtn {
@@ -26,6 +27,8 @@
 
 @media only screen and (max-width: 768px) {
   .TodoPage {
+    margin: 0 -15px;
+
     &__lists {
       display: none;
     }
@@ -35,8 +38,7 @@
     }
 
     &__todos {
-      padding: 10px 10px;
-      margin: 0 -15px;
+      padding: 10px;
     }
 
 
