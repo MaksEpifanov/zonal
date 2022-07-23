@@ -8,7 +8,6 @@ const format = (val, ...rest) => {
   }
   return value;
 };
+const formatTime = (time) => `${format(time.min)}:${format(time.sec)}:${format(time.ms, 'ms')}`;
 
-const formatTime = (time) => `${format(time.min)} : ${format(time.sec)} : ${format(time.ms, 'ms')}`;
-
-export { formatTime, format };
+export default formatTime;

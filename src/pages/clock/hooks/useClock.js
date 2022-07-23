@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StoreContext } from 'store/Store';
-import { addCityAction, deleteCityAction, changeActiveCityAction } from 'store/actions';
+import { addCityAction, deleteCityAction, changeActiveCityAction } from 'store/actions/clock';
 
 const useClock = (type) => {
   const [{ clock }, dispatch] = useContext(StoreContext);

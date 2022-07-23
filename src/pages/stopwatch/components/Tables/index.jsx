@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useMemo } from 'react';
-import { formatTime } from 'pages/stopwatch/utils';
+import formatTime from 'pages/stopwatch/utils';
 import styles from './Tables.module.scss';
 
 const Tables = ({ data }) => {
@@ -28,7 +28,7 @@ const Tables = ({ data }) => {
     <tbody>
       {data.map((row) => (
         <tr key={row.id}>
-          <td>{row.id}</td>
+          <td>{row.id + 1}</td>
           <td>{formatTime(row.lap)}</td>
           <td>{formatTime(row.total)}</td>
         </tr>

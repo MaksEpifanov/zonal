@@ -5,8 +5,9 @@ import Button from 'common/components/UI/Button';
 import { ReactComponent as NextSVG } from 'assets/icons/next.svg';
 import { ReactComponent as PauseSVG } from 'assets/icons/pause.svg';
 
-import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
+import { useControlPomodoro, useResetPomodoro, useStatusPomodoro } from 'pages/pomodoro/hooks';
 import { getMode } from 'pages/pomodoro/utils/index';
+
 import PomodoroOptions from '../PomodoroOptions';
 
 import styles from './PomodoroControls.module.scss';
@@ -19,7 +20,9 @@ const PomodoroControls = ({ className }) => {
     [className]: !!className,
   });
 
-  const [status, lap, toggleTimerStatus, changeTimerMode, resetTimer] = useControlPomodoro();
+  const [status, toggleTimerStatus, changeTimerMode] = useStatusPomodoro();
+  const [, lap] = useControlPomodoro();
+  const [resetTimer] = useResetPomodoro();
 
   const setMode = () => {
     const timerMode = getMode(status.timerMode, lap);

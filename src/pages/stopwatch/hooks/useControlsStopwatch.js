@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StoreContext } from 'store/Store';
-import { startStopwatchAction, splitStopwatchAction, resetStopwatchAction } from 'store/actions';
+import { startStopwatchAction, splitStopwatchAction, resetStopwatchAction } from 'store/actions/stopwatch';
 
 const useControlsStopwatch = () => {
   const [{ stopwatch }, dispatch] = useContext(StoreContext);

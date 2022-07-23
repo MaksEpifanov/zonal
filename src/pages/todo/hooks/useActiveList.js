@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StoreContext } from 'store/Store';
-import { changeActiveListAction } from 'store/actions';
+import { changeActiveListAction } from 'store/actions/todo';
 
 const useActiveLists = () => {
   const [{ todo }, dispatch] = useContext(StoreContext);

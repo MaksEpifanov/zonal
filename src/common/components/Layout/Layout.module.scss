@@ -10,12 +10,17 @@
 
   &__main {
     flex-grow: 1;
-    margin: 5% 0;
+    margin: 2% 0;
+    padding-top: 10px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   .Layout {
     height: 85vh;
+
+    &__main {
+      padding-top: 0;
+    }
   }
 }

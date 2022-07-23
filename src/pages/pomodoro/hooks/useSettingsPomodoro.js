@@ -6,7 +6,7 @@ import {
   changeSettingsLongBreakTimeAction,
   toggleSettingsSoundAction,
   resetTimerAction,
-} from 'store/actions';
+} from 'store/actions/pomodoro';
 
 const useSettingsPomodoro = () => {
   const [{ pomodoro }, dispatch] = useContext(StoreContext);

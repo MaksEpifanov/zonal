@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
-import useSettingsPomodoro from 'pages/pomodoro/hooks/useSettingsPomodoro';
-import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
-import useDisplayPomodoro from 'pages/pomodoro/hooks/useDisplayPomodoro';
+import { useSettingsPomodoro, useControlPomodoro, useStatusPomodoro } from 'pages/pomodoro/hooks';
+
 import { formatTimeToPercent } from 'pages/pomodoro/utils';
 
 import styles from './ProgressBar.module.scss';
@@ -16,9 +15,9 @@ const ProgressBar = ({ className }) => {
     [className]: !!className,
   });
 
-  const [timer] = useDisplayPomodoro();
+  const [timer] = useControlPomodoro();
   const [settings] = useSettingsPomodoro();
-  const [status] = useControlPomodoro();
+  const [status] = useStatusPomodoro();
 
   const widthBar = formatTimeToPercent(timer, settings, status.timerMode);
 

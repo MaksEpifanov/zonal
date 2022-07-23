@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
 import Display from 'common/components/UI/Displays';
-import useDisplayPomodoro from 'pages/pomodoro/hooks/useDisplayPomodoro';
-import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
-import { formatTimer, getMode } from '../../utils';
+import { useControlPomodoro, useResetPomodoro, useStatusPomodoro } from 'pages/pomodoro/hooks';
+import { formatTimer, getMode } from 'pages/pomodoro/utils';
 
 import styles from './PomodoroDisplay.module.scss';
 
@@ -17,8 +16,9 @@ const PomodoroDisplay = ({ className }) => {
     [className]: !!className,
   });
 
-  const [{ isTimerOn, timerMode }] = useControlPomodoro();
-  const [timer, lap, countTimer, countLap, changeTimerMode, resetTimer] = useDisplayPomodoro();
+  const [{ isTimerOn, timerMode }, , changeTimerMode] = useStatusPomodoro();
+  const [timer, lap, countTimer, countLap] = useControlPomodoro();
+  const [resetTimer] = useResetPomodoro();
 
   useEffect(() => {
     let tick;
@@ -39,14 +39,10 @@ const PomodoroDisplay = ({ className }) => {
 
   return (
     <div className={classNames}>
-      <Display>{formatTimer(timer)}</Display>
+      <Display value={formatTimer(timer)} />
       <div className={styles.PomodoroDisplay__sub}>
-        <Display isActive>
-          Time to
-          {' '}
-          {timerMode}
-        </Display>
-        <Display>{lap}</Display>
+        <Display isActive value={`Time to ${timerMode}`} />
+        <Display value={String(lap)} />
       </div>
     </div>
   );

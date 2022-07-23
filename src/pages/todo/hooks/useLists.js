@@ -3,7 +3,7 @@ import { StoreContext } from 'store/Store';
 import {
   addListAction,
   deleteListAction,
-} from 'store/actions';
+} from 'store/actions/todo';
 
 const useLists = () => {
   const [{ todo }, dispatch] = useContext(StoreContext);

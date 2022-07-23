@@ -1,6 +1,4 @@
-import ProgressBar from './components/ProgressBar';
-import PomodoroControls from './components/PomodoroControls';
-import PomodoroDisplay from './components/PomodoroDisplay';
+import { ProgressBar, PomodoroControls, PomodoroDisplay } from './components';
 
 import styles from './PomodoroPage.module.scss';
 

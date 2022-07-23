@@ -1,11 +1,22 @@
+import { useEffect, useCallback, memo } from 'react';
+import PropTypes from 'prop-types';
+import classNamesBind from 'classnames/bind';
+
 import Displays from 'common/components/UI/Displays';
 import Tables from 'pages/stopwatch/components/Tables';
-import { format } from 'pages/stopwatch/utils';
-import { useEffect, useCallback, memo } from 'react';
+import formatTime from 'pages/stopwatch/utils';
 import useDisplayStopwatch from '../../hooks/useDisplayStopwatch';
+
 import styles from './StopwatchDisplay.module.scss';
 
-const StopwatchDisplay = () => {
+const cx = classNamesBind.bind(styles);
+
+const StopwatchDisplay = ({ className }) => {
+  const classNames = cx({
+    StopwatchDisplay,
+    [className]: !!className,
+  });
+
   const [info, times, laps, setTime] = useDisplayStopwatch();
   const { main, lap } = times;
   const { isStart } = info;
@@ -46,23 +57,11 @@ const StopwatchDisplay = () => {
   }, [isStart, tick]);
 
   return (
-    <div className={styles.StopwatchDisplay}>
+    <div className={classNames}>
       <div className={styles.timers}>
-        <Displays>
-          {format(main.min)}
-          :
-          {format(main.sec)}
-          :
-          {format(main.ms, 'ms')}
-        </Displays>
+        <Displays value={formatTime(main)} />
         <div className={styles.timers__second}>
-          <Displays isActive>
-            {format(lap.min)}
-            :
-            {format(lap.sec)}
-            :
-            {format(lap.ms, 'ms')}
-          </Displays>
+          <Displays isActive value={formatTime(lap)} />
         </div>
       </div>
       <div className={styles.tables}>
@@ -73,3 +72,11 @@ const StopwatchDisplay = () => {
 };
 
 export default memo(StopwatchDisplay);
+
+StopwatchDisplay.propTypes = {
+  className: PropTypes.string,
+};
+
+StopwatchDisplay.defaultProps = {
+  className: '',
+};

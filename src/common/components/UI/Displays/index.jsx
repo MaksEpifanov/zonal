@@ -5,7 +5,7 @@ import styles from './Displays.module.scss';
 
 const cx = classNamesBind.bind(styles);
 
-const Displays = ({ className, isActive, children }) => {
+const Displays = ({ className, isActive, value }) => {
   const classNames = cx({
     [className]: !!className,
     Displays: true,
@@ -14,7 +14,7 @@ const Displays = ({ className, isActive, children }) => {
 
   return (
     <div className={classNames}>
-      {children}
+      {value}
     </div>
   );
 };
@@ -24,7 +24,7 @@ export default Displays;
 Displays.propTypes = {
   className: PropTypes.string,
   isActive: PropTypes.bool,
-  children: PropTypes.arrayOf(PropTypes.string).isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 Displays.defaultProps = {

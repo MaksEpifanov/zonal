@@ -1,6 +1,6 @@
 import { useContext, useCallback } from 'react';
 import { StoreContext } from 'store/Store';
-import { changeStopwatchAction } from 'store/actions';
+import { changeStopwatchAction } from 'store/actions/stopwatch';
 
 const useDisplayStopwatch = () => {
   const [{ stopwatch }, dispatch] = useContext(StoreContext);

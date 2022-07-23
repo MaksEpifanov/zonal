@@ -6,13 +6,13 @@
   justify-content: center;
   gap: 40px;
 
-  .controls {
+  &__controls {
     min-width: 200px;
     max-width: 400px;
     align-self: flex-start;
   }
 
-  .displays {
+  &__displays {
     flex-grow: 1;
   }
 }
@@ -21,7 +21,7 @@
   .StopwatchPage {
     padding: 30px 5% 0;
 
-    .controls {
+    &__controls {
       min-width: 0;
 
       position: absolute;

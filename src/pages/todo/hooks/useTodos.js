@@ -4,7 +4,7 @@ import {
   addTodoAction,
   deleteTodoAction,
   completeTodoAction,
-} from 'store/actions';
+} from 'store/actions/todo';
 
 const useTodos = () => {
   const [{ todo }, dispatch] = useContext(StoreContext);

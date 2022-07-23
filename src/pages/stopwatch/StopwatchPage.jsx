@@ -1,16 +1,11 @@
-import Controls from './components/Controls';
-import StopwatchDisplay from './components/StopwatchDisplay';
+import { Controls, StopwatchDisplay } from './components';
 
 import styles from './StopwatchPage.module.scss';
 
 const StopwatchPage = () => (
   <div className={styles.StopwatchPage}>
-    <div className={styles.controls}>
-      <Controls />
-    </div>
-    <div className={styles.displays}>
-      <StopwatchDisplay />
-    </div>
+    <Controls className={styles.StopwatchPage__controls} />
+    <StopwatchDisplay className={styles.StopwatchPage__displays} />
   </div>
 );
 

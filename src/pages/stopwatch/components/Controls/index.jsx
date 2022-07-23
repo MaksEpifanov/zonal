@@ -1,15 +1,24 @@
-import Button from 'common/components/UI/Button';
+import PropTypes from 'prop-types';
+import classNamesBind from 'classnames/bind';
 
+import Button from 'common/components/UI/Button';
 import { ReactComponent as ResetSVG } from 'assets/icons/reset.svg';
 import { ReactComponent as SplitSVG } from 'assets/icons/split.svg';
 import { ReactComponent as PauseSVG } from 'assets/icons/pause.svg';
 
-import useStopwatch from '../../hooks/useControlsStopwatch';
+import { useControlsStopwatch } from 'pages/stopwatch/hooks';
 
 import styles from './Controls.module.scss';
 
-const Controls = () => {
-  const [info, startStopwatch, splitStopwatch, resetStopwatch] = useStopwatch();
+const cx = classNamesBind.bind(styles);
+
+const Controls = ({ className }) => {
+  const classNames = cx({
+    Controls,
+    [className]: !!className,
+  });
+
+  const [info, startStopwatch, splitStopwatch, resetStopwatch] = useControlsStopwatch();
 
   const primaryButton = (
     <Button
@@ -21,7 +30,7 @@ const Controls = () => {
   );
 
   return (
-    <div className={styles.Controls}>
+    <div className={classNames}>
       <div className={styles.Controls__mainBtn}>
         {primaryButton}
       </div>
@@ -34,3 +43,11 @@ const Controls = () => {
 };
 
 export default Controls;
+
+Controls.propTypes = {
+  className: PropTypes.string,
+};
+
+Controls.defaultProps = {
+  className: '',
+};

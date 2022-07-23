@@ -2,10 +2,10 @@ import { ReactComponent as SoundSVG } from 'assets/icons/sound.svg';
 import { ReactComponent as MuteSVG } from 'assets/icons/mute.svg';
 import { ReactComponent as ResetSVG } from 'assets/icons/reset.svg';
 
+import { useSettingsPomodoro, useResetPomodoro } from 'pages/pomodoro/hooks';
+
 import Button from 'common/components/UI/Button';
 import NumberInput from 'common/components/UI/NumberInput';
-import useSettingsPomodoro from 'pages/pomodoro/hooks/useSettingsPomodoro';
-import useControlPomodoro from 'pages/pomodoro/hooks/useControlPomodoro';
 
 import styles from './PomodoroOptions.module.scss';
 
@@ -16,7 +16,7 @@ const OptionsInModal = () => {
     changeLongTime,
     toggleSound] = useSettingsPomodoro();
 
-  const [,,,, resetTimer] = useControlPomodoro();
+  const [resetTimer] = useResetPomodoro();
 
   const SoundButton = (
     <Button

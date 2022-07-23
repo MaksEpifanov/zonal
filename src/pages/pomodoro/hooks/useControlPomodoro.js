@@ -1,15 +1,14 @@
 import { useContext } from 'react';
 import { StoreContext } from 'store/Store';
-import { toggleTimerStatusAction, changeTimerModeAction, resetTimerAction } from 'store/actions';
+import { countTimerAction, countLapAction } from 'store/actions/pomodoro';
 
 const useControlPomodoro = () => {
   const [{ pomodoro }, dispatch] = useContext(StoreContext);
 
-  const toggleTimerStatus = () => dispatch(toggleTimerStatusAction());
-  const changeTimerMode = (mode) => dispatch(changeTimerModeAction(mode));
-  const resetTimer = () => dispatch(resetTimerAction());
+  const countTimer = () => dispatch(countTimerAction());
+  const countLap = () => dispatch(countLapAction());
 
-  return [pomodoro.status, pomodoro.lap, toggleTimerStatus, changeTimerMode, resetTimer];
+  return [pomodoro.timer, pomodoro.lap, countTimer, countLap];
 };
 
 export default useControlPomodoro;
