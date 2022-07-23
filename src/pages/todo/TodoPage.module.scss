@@ -79,3 +79,11 @@
     }
   }
 }
+
+@media only screen and (max-height: 500px) {
+  .TodoPage {
+    &__openBtn {
+      display: none;
+    }
+  }
+}
