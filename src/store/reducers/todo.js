@@ -15,6 +15,7 @@ const todoReducer = (state, action) => {
         todo: {
           ...state.todo,
           lists: state.todo.lists.filter((list) => list.id !== action.payload),
+          todos: state.todo.todos.filter((todo) => todo.idList !== action.payload),
         },
       };
     }
