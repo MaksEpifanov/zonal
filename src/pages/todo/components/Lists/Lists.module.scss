@@ -1,13 +1,16 @@
 .Lists {
   .header {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 300px;
+
+    margin-bottom: 10px;
 
 
     &__title {
       font-size: var(--text-base-size);
+      margin: 0;
     }
 
     &__addBtn {

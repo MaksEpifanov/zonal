@@ -4,7 +4,7 @@ import useTodos from 'pages/todo/hooks/useTodos';
 import useLists from 'pages/todo/hooks/useLists';
 
 import TodoItem from '../TodoItem';
-import AddTodo from '../AddTodo';
+import AddTodoField from './AddTodoField';
 
 import styles from './Todos.module.scss';
 
@@ -28,7 +28,7 @@ const Todos = ({ className }) => {
 
   return (
     <div className={classNames}>
-      <AddTodo className={styles.Todos_newTodoFild} />
+      <AddTodoField className={styles.Todos_newTodoFild} />
       {labelTodos}
     </div>
   );

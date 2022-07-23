@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
-import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
-import Button from 'common/components/UI/Button';
 
 import useLists from 'pages/todo/hooks/useLists';
 import useActiveLists from 'pages/todo/hooks/useActiveList';
+
+import Button from 'common/components/UI/Button';
+import AddNewList from './AddListField';
 
 import styles from './Lists.module.scss';
 
@@ -27,10 +28,7 @@ const Lists = ({ className }) => {
 
   return (
     <div className={classNames}>
-      <div className={styles.header}>
-        <h3 className={styles.header__title}>Lists</h3>
-        <AddSVG className={styles.header__addBtn} />
-      </div>
+      <AddNewList className={styles.header} />
       <div className={styles.lists}>
         {labelList}
       </div>
