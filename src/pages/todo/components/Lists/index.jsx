@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNamesBind from 'classnames/bind';
 
 import useLists from 'pages/todo/hooks/useLists';
 import useActiveLists from 'pages/todo/hooks/useActiveList';
@@ -8,8 +9,13 @@ import AddNewList from './AddListField';
 
 import styles from './Lists.module.scss';
 
+const cx = classNamesBind.bind(styles);
+
 const Lists = ({ className }) => {
-  const classNames = `${styles.Lists} ${className}`;
+  const classNames = cx({
+    Lists,
+    [className]: !!className,
+  });
 
   const [lists, , deleteList] = useLists();
   const [activeList, changeActiveList] = useActiveLists();
@@ -28,7 +34,7 @@ const Lists = ({ className }) => {
 
   return (
     <div className={classNames}>
-      <AddNewList className={styles.header} />
+      <AddNewList className={styles['input-field']} />
       <div className={styles.lists}>
         {labelList}
       </div>

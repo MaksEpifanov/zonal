@@ -1,12 +1,9 @@
 .Lists {
-  .header {
+  .input-field {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 300px;
-
     margin-bottom: 10px;
-
 
     &__title {
       font-size: var(--text-base-size);
@@ -14,8 +11,8 @@
     }
 
     &__addBtn {
-      height: 42px;
-      width: 42px;
+      height: 50px;
+      width: 50px;
       padding: 15px;
       border-radius: 50%;
 

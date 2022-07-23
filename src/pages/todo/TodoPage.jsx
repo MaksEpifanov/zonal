@@ -3,8 +3,7 @@ import { useState } from 'react';
 import Modal from 'common/components/UI/Modal';
 import Button from 'common/components/UI/Button';
 import { ReactComponent as MenuSVG } from 'assets/icons/menu.svg';
-import Lists from './components/Lists';
-import Todos from './components/Todos';
+import { Lists, Todos } from './components';
 
 import styles from './TodoPage.module.scss';
 

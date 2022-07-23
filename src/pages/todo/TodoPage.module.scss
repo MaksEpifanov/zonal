@@ -2,17 +2,14 @@
   display: flex;
   height: 75vh;
 
-  &>*:not(:last-child) {
-    margin-right: 20px;
-  }
-
-
   &__lists {
     padding: 0 10px;
-    min-width: 300px;
+    flex-basis: 350px;
+    flex-grow: 0;
   }
 
   &__sep {
+    margin: 0 20px;
     height: 100%;
     min-width: 2px;
     background-color: var(--gray-color);
@@ -36,6 +33,12 @@
     &__sep {
       display: none;
     }
+
+    &__todos {
+      padding: 10px 10px;
+      margin: 0 -15px;
+    }
+
 
     &__openBtn {
       display: block;

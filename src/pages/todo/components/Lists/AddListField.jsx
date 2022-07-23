@@ -9,7 +9,7 @@ import useLists from 'pages/todo/hooks/useLists';
 import styles from './Lists.module.scss';
 
 const AddListField = ({ className }) => {
-  const [hiddenInput, setHiddeninput] = useState(true);
+  const [hiddenInput, setHiddenInput] = useState(true);
   const [lists, addList] = useLists();
 
   const onSubmit = (inputText) => {
@@ -19,27 +19,27 @@ const AddListField = ({ className }) => {
     };
 
     addList(newList);
-    setHiddeninput((prevState) => !prevState);
+    setHiddenInput((prevState) => !prevState);
   };
 
   const labelInput = () => {
     if (hiddenInput) {
       return (
         <>
-          <h3 className={styles.header__title}>Lists</h3>
+          <h3 className={styles['input-field__title']}>Lists</h3>
           <AddSVG
-            className={styles.header__addBtn}
-            onClick={() => setHiddeninput((prevState) => !prevState)}
+            className={styles['input-field__addBtn']}
+            onClick={() => setHiddenInput((prevState) => !prevState)}
           />
         </>
       );
     }
     return (
       <TextInput
-        className={styles.header}
-        submitButton={<AddSVG />}
-        onSubmit={onSubmit}
         placeholder="Click to input new list"
+        onSubmit={onSubmit}
+        submitButton={<AddSVG />}
+        onEmptySubmit={() => setHiddenInput((prevState) => !prevState)}
       />
     );
   };
