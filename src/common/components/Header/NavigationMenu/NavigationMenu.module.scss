@@ -1,21 +1,22 @@
 .NavigationMenu {
   flex-grow: 1;
-  background-color: var(--navigation-menu);
-  font-family: var(--second-font);
-  color: var(--gray-color);
   border-radius: 20px;
+
+  background-color: var(--navigation-menu);
+  color: var(--gray-color);
+  font-family: var(--second-font);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 
   &__list {
-    margin: 0;
-    min-height: 90px;
-    max-height: 110px;
-    padding: 0;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     gap: 10px;
+
+    min-height: 90px;
+    max-height: 110px;
+    margin: 0;
+    padding: 0;
   }
 
   &__item {
@@ -34,15 +35,15 @@
 
 @media only screen and (max-width: 768px) {
   .NavigationMenu {
-    width: 100%;
+    z-index: 10;
     position: fixed;
     bottom: 0;
     left: 0;
 
-    box-shadow: none;
+    width: 100%;
     border-radius: 25px 25px 0 0;
 
-    z-index: 10;
+    box-shadow: none;
 
     &__list {
       justify-content: space-around;
@@ -57,8 +58,8 @@
     }
 
     &__icon {
-      width: 1.4em;
       margin: 0;
+      width: 1.4em;
     }
   }
 }

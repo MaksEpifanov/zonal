@@ -5,8 +5,8 @@
 
   &__upBtns {
     display: flex;
-    width: 100%;
 
+    width: 100%;
     margin-bottom: 20px;
 
     &>* {
@@ -22,6 +22,7 @@
 
   &__downBtns {
     display: flex;
+
     width: 50%;
 
     &>*:not(:first-child) {
@@ -36,12 +37,13 @@
   .PomodoroControls {
     position: absolute;
     bottom: 140px;
+
     flex-wrap: nowrap;
 
     &__upBtns {
       display: flex;
-      width: auto;
 
+      width: auto;
       margin-bottom: 0;
       margin-right: 20px;
 
@@ -62,26 +64,29 @@
     }
 
     &__mainBtn {
-      width: auto;
+      z-index: 11;
       position: fixed;
       bottom: calc(90px - 37px);
       left: calc(50% - 37px);
-      z-index: 11;
+
+      width: auto;
+      border: 6px solid var(--background-color);
+      border-radius: 50%;
 
       background-color: var(--background-color);
       box-shadow: none;
-      border: 6px solid var(--background-color);
-      border-radius: 50%;
 
       &::before {
         content: "";
         position: absolute;
         top: 50%;
         left: -22px;
+
         width: 20px;
         height: 20px;
-        background-color: transparent;
         border-top-right-radius: 20px;
+
+        background-color: transparent;
         box-shadow: 0 -10px 0 0 var(--background-color);
       }
 
@@ -90,10 +95,12 @@
         position: absolute;
         top: 50%;
         right: -22px;
+
         width: 20px;
         height: 20px;
-        background-color: transparent;
         border-top-left-radius: 20px;
+
+        background-color: transparent;
         box-shadow: 0 -10px 0 0 var(--background-color);
       }
     }

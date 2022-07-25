@@ -1,12 +1,11 @@
 .Layout {
-  max-width: 1140px;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   margin: 0 auto;
   padding: 20px 15px;
-
-  display: flex;
-  flex-direction: column;
+  max-width: 1140px;
+  height: 100vh;
 
   &__main {
     flex-grow: 1;

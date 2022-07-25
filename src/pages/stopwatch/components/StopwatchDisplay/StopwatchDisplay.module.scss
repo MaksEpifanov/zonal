@@ -8,11 +8,11 @@
     height: 150px;
 
     &__second {
-      height: 40px;
-      width: 100%;
-
       position: absolute;
       bottom: 0;
+
+      height: 40px;
+      width: 100%;
     }
 
     &>*:first-child {

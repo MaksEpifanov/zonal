@@ -9,15 +9,14 @@
     display: none;
   }
 
-  padding: 20px;
-
-  border: 2px solid white;
-  border-radius: 15px;
-
   display: flex;
   flex-direction: column;
 
   max-height: 55vh;
+  padding: 20px;
+
+  border: 2px solid white;
+  border-radius: 15px;
 
   &>* {
     flex-shrink: 0;
@@ -31,8 +30,9 @@
 
 @media only screen and (max-width: 768px) {
   .CitiesList {
-    margin: 0 -25px;
     flex-direction: row;
+
+    margin: 0 -25px;
     padding: 20px 15px;
 
     border: none;

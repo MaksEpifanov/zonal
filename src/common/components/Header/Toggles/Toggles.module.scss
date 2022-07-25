@@ -7,10 +7,12 @@
   &__lang {
     padding: 0;
     border: none;
-    cursor: pointer;
+
     background-color: var(--background-color);
     color: var(--secondary-color);
     fill: currentColor;
+    cursor: pointer;
+
     transition: color .4s;
 
     &:hover {

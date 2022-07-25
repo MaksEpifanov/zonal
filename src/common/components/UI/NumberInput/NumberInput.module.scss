@@ -7,6 +7,7 @@
   input {
     width: 100%;
     padding: 10px;
+
     border-radius: 10px;
     border: none;
 
@@ -16,6 +17,7 @@
     &::-webkit-inner-spin-button {
       height: 21px;
       width: 14px;
+
       opacity: 0.5;
       cursor: pointer;
     }

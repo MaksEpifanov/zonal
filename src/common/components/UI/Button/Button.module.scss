@@ -17,36 +17,44 @@
 }
 
 .Button {
-  width: 100%;
-  height: 62px;
-
-  font-family: var(--main-font);
-  font-size: var(--base-text-size);
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--foreground-color);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-
-  cursor: pointer;
-  background: var(--background);
-  box-shadow: var(--shadow);
-  border: 0px;
-  border-radius: 30px;
-
+  position: relative;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  position: relative;
+  width: 100%;
+  height: 62px;
+  border: 0px;
+  border-radius: 30px;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-family: var(--main-font);
+  font-size: var(--base-text-size);
+  font-weight: 700;
+  color: var(--foreground-color);
+  background: var(--background);
+  box-shadow: var(--shadow);
+
+  text-transform: uppercase;
+  cursor: pointer;
   transition: transform .2s, background .2s;
 
   &:hover {
     transform: translateY(-0.05em);
     box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.55);
+
+    .Button__text {
+      margin-right: 30px;
+    }
+
+    .Button__delete {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
   &:active {
@@ -54,9 +62,9 @@
   }
 
   &:disabled {
-    cursor: default;
     color: var(--gray-color);
     transform: none;
+    cursor: default;
 
     &:hover {
       box-shadow: var(--shadow);
@@ -72,9 +80,6 @@
   }
 
   &__icon {
-    height: 62px;
-    width: 62px;
-
     position: absolute;
     left: 0;
 
@@ -82,6 +87,8 @@
     justify-content: center;
     align-items: center;
 
+    height: 62px;
+    width: 62px;
     padding: 10px;
     border: 0;
     border-radius: 50%;
@@ -96,31 +103,32 @@
     }
   }
 
+  &__text {
+    transition: margin-right .3s;
+  }
+
   &:not(&__item) &__text {
     margin-left: 26px;
   }
 
   &__delete {
-    height: 100%;
-
     position: absolute;
     right: 10px;
 
     display: flex;
     align-items: center;
 
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s;
+
     svg {
-      width: 42px;
-      height: 42px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
 
       opacity: 20%;
-      border-radius: 50%;
-      border: 3px solid var(--foreground-color);
-
       transition: opacity .3s, fill .4s;
-      -moz-transition: opacity .3s, fill .4s;
-      -webkit-transition: opacity .3s, fill .4s;
-      -o-transition: opacity .3s, fill .4s;
 
       &:hover {
         fill: var(--secondary-color);
@@ -163,6 +171,15 @@
 
     &:active {
       transform: scale(.9);
+    }
+
+    &__delete {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__text {
+      margin-right: 30px;
     }
 
     &:disabled {

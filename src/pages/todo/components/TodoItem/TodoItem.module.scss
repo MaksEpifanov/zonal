@@ -1,10 +1,9 @@
 .TodoItem {
-  padding: 10px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  padding: 10px;
   border-radius: 15px;
 
   cursor: pointer;
@@ -20,21 +19,24 @@
     overflow: hidden;
 
     &__text {
-      white-space: nowrap;
+      position: relative;
+
       overflow: hidden;
       text-overflow: ellipsis;
+      white-space: nowrap;
 
-      position: relative;
       transition: color .4s;
 
       &::before {
-        transition: width .4s;
         content: '';
         position: absolute;
         top: 50%;
+
         width: 0;
-        background-color: var(--gray-color);
         height: 3px;
+
+        background-color: var(--gray-color);
+        transition: width .4s;
       }
     }
 
@@ -45,12 +47,13 @@
   }
 
   .delete-btn {
+    visibility: hidden;
+    flex-shrink: 0;
+
     width: 32px;
     height: 32px;
-    fill: var(--gray-color);
 
-    flex-shrink: 0;
-    visibility: hidden;
+    fill: var(--gray-color);
   }
 
   &_checked {
@@ -58,7 +61,6 @@
       color: var(--gray-color);
 
       &__text {
-
         &::before {
           width: 100%;
         }

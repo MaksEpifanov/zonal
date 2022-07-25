@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
   font-size: var(--text-base-size);
 
   &>*:not(:last-child) {

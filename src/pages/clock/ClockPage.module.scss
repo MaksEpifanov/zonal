@@ -1,14 +1,15 @@
 .ClockPage {
-  height: 100%;
   display: flex;
   justify-content: space-evenly;
 
+  height: 100%;
+
   &__left {
+    flex-grow: 1;
+
     padding: 0 10px;
     min-width: 250px;
     max-width: 300px;
-
-    flex-grow: 1;
 
     &>:first-child {
       margin-bottom: 30px;
@@ -31,15 +32,16 @@
     }
 
     &__mainBtn {
+      z-index: 11;
       position: fixed;
       bottom: calc(90px - 37px);
       left: calc(50% - 37px);
-      z-index: 11;
+
+      border: 6px solid var(--background-color);
+      border-radius: 50%;
 
       background-color: var(--background-color);
       box-shadow: none;
-      border: 6px solid var(--background-color);
-      border-radius: 50%;
 
       &::before {
         content: "";
@@ -48,8 +50,10 @@
         left: -22px;
         width: 20px;
         height: 20px;
-        background-color: transparent;
+
         border-top-right-radius: 20px;
+
+        background-color: transparent;
         box-shadow: 0 -10px 0 0 var(--background-color);
       }
 
@@ -60,12 +64,12 @@
         right: -22px;
         width: 20px;
         height: 20px;
-        background-color: transparent;
+
         border-top-left-radius: 20px;
+
+        background-color: transparent;
         box-shadow: 0 -10px 0 0 var(--background-color);
       }
     }
   }
 }
-
-@media screen {}

@@ -13,7 +13,6 @@
 
     background-color: transparent;
     color: var(--foreground-color);
-
     font-size: 18px;
 
     &:focus {
@@ -23,19 +22,18 @@
   }
 
   &__submit {
-    width: 50px;
-    height: 50px;
     flex-shrink: 0;
 
-    border: none;
-
+    width: 50px;
+    height: 50px;
     padding: 15px;
+
+    border: none;
+    border-radius: 50%;
+
 
     fill: white;
     background-color: var(--gray-color);
-
-    border-radius: 50%;
-
     cursor: pointer;
 
     transition: transform .2s;
