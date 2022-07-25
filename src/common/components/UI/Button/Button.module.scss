@@ -47,10 +47,6 @@
     transform: translateY(-0.05em);
     box-shadow: 5px 6px 14px rgba(0, 0, 0, 0.55);
 
-    .Button__text {
-      margin-right: 30px;
-    }
-
     .Button__delete {
       visibility: visible;
       opacity: 1;
@@ -144,6 +140,10 @@
     &_active {
       background: var(--active-color);
       color: var(--btn-text-active);
+    }
+
+    &:hover .Button__text {
+      margin-right: 30px;
     }
   }
 
