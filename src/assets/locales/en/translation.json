@@ -8,10 +8,13 @@
   "buttons": {
     "add": "add",
     "start": "start",
+    "pause": "pause",
     "reset": "reset",
     "split": "split",
     "next": "next",
-    "options": "options"
+    "options": "options",
+    "sound_on": "sound on",
+    "sound_off": "sound off"
   },
   "stopwatch": {
     "interval": "interval",
@@ -20,8 +23,7 @@
   "pomodoro": {
     "time_to": "Time to",
     "focus": "focus",
-    "short_break": "short break",
-    "long_break": "long break",
-    "time": "time"
+    "short_break": "Short break",
+    "long_break": "Long break"
   }
 }

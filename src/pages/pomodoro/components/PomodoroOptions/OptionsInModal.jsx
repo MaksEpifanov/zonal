@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ReactComponent as SoundSVG } from 'assets/icons/sound.svg';
 import { ReactComponent as MuteSVG } from 'assets/icons/mute.svg';
 import { ReactComponent as ResetSVG } from 'assets/icons/reset.svg';
@@ -17,11 +18,12 @@ const OptionsInModal = () => {
     toggleSound] = useSettingsPomodoro();
 
   const [resetTimer] = useResetPomodoro();
+  const { t } = useTranslation();
 
   const SoundButton = (
     <Button
       onClick={toggleSound}
-      value={settings.sound ? 'sound on' : 'sound off'}
+      value={settings.sound ? t('buttons.sound_on') : t('buttons.sound_off')}
       icon={settings.sound ? <SoundSVG /> : <MuteSVG />}
     />
   );
@@ -30,11 +32,11 @@ const OptionsInModal = () => {
     <div className={styles.PomodoroOptions__modal}>
       <div className={styles.PomodoroOptions__controls}>
         {SoundButton}
-        <Button value="reset" icon={<ResetSVG />} onClick={resetTimer} />
+        <Button value={t('buttons.reset')} icon={<ResetSVG />} onClick={resetTimer} />
       </div>
-      <NumberInput max={60} min={5} value={+settings.timerFocus} type="Focus time" onChange={changeFocusTime} />
-      <NumberInput max={20} min={1} value={+settings.timerShortBreak} type="Short break time" onChange={changeShortTime} />
-      <NumberInput max={45} min={5} value={+settings.timerLongBreak} type="Long break time" onChange={changeLongTime} />
+      <NumberInput max={60} min={5} value={+settings.timerFocus} type={`${t('pomodoro.time_to')} ${t('pomodoro.focus')}`} onChange={changeFocusTime} />
+      <NumberInput max={20} min={1} value={+settings.timerShortBreak} type={t('pomodoro.short_break')} onChange={changeShortTime} />
+      <NumberInput max={45} min={5} value={+settings.timerLongBreak} type={t('pomodoro.long_break')} onChange={changeLongTime} />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
@@ -19,6 +20,9 @@ const Button = ({
     [className]: !!className,
   });
 
+  const { t } = useTranslation('translation', { keyPrefix: 'buttons' });
+  const valueText = value || t('start');
+
   const btnIcon = !item ? (
     <div className={styles.Button__icon}>
       {icon}
@@ -38,7 +42,7 @@ const Button = ({
   return (
     <button type="button" className={classNames} onClick={onClick} disabled={disabled}>
       {btnIcon}
-      <div className={styles.Button__text}>{value}</div>
+      <div className={styles.Button__text}>{valueText}</div>
       {btnDelete}
     </button>
   );
@@ -55,7 +59,7 @@ Button.propTypes = {
   active: PropTypes.bool,
   primary: PropTypes.bool,
   icon: PropTypes.element,
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
   disabled: PropTypes.bool,
 };
 
@@ -65,7 +69,6 @@ Button.defaultProps = {
   active: false,
   primary: false,
   icon: <PlaySVG />,
-  value: 'start',
   noResponse: false,
   disabled: false,
   onDelete: () => { },

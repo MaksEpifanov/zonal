@@ -8,10 +8,13 @@
   "buttons": {
     "add": "добавить",
     "start": "старт",
+    "pause": "пауза",
     "reset": "сброс",
     "split": "круг",
     "next": "дальше",
-    "options": "настройки"
+    "options": "настройки",
+    "sound_on": "звук вкл.",
+    "sound_off": "звук выкл."
   },
   "stopwatch": {
     "interval": "интервал",
@@ -20,8 +23,7 @@
   "pomodoro": {
     "time_to": "Время",
     "focus": "работы",
-    "short_break": "короткого перерыва",
-    "long_break": "длинного перерыва",
-    "time": "время"
+    "short_break": "Короткий перерыв",
+    "long_break": "Длинный перерыв"
   }
 }

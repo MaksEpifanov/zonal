@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
@@ -19,6 +20,7 @@ const PomodoroDisplay = ({ className }) => {
   const [{ isTimerOn, timerMode }, , changeTimerMode] = useStatusPomodoro();
   const [timer, lap, countTimer, countLap] = useControlPomodoro();
   const [resetTimer] = useResetPomodoro();
+  const { t } = useTranslation('translation', { keyPrefix: 'pomodoro' });
 
   useEffect(() => {
     let tick;
@@ -37,11 +39,19 @@ const PomodoroDisplay = ({ className }) => {
     return () => clearInterval(tick);
   }, [isTimerOn, countTimer, changeTimerMode, countLap, lap, resetTimer, timer, timerMode]);
 
+  const getTranslateDisplay = (mode) => {
+    switch (mode) {
+      case 'short break': return t('short_break');
+      case 'long break': return t('long_break');
+      default: return `${t('time_to')} ${t('focus')}`;
+    }
+  };
+
   return (
     <div className={classNames}>
       <Display value={formatTimer(timer)} />
       <div className={styles.PomodoroDisplay__sub}>
-        <Display isActive value={`Time to ${timerMode}`} />
+        <Display isActive value={getTranslateDisplay(timerMode)} />
         <Display value={String(lap)} />
       </div>
     </div>

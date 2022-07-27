@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
@@ -18,12 +19,13 @@ const PomodoroOptions = ({ className, disabled }) => {
   });
 
   const [isOpenModal, setOpenModal] = useState(false);
+  const { t } = useTranslation('translation', { keyPrefix: 'buttons' });
 
   const onViewModal = () => setOpenModal((prevOpenModal) => !prevOpenModal);
 
   return (
     <div className={classNames}>
-      <Button value="Options" icon={<OptionsSVG />} onClick={onViewModal} disabled={disabled} />
+      <Button value={t('options')} icon={<OptionsSVG />} onClick={onViewModal} disabled={disabled} />
       <Modal
         className={styles.PomodoroOptions__zi}
         isOpen={isOpenModal}

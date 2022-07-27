@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
@@ -20,6 +21,7 @@ const PomodoroControls = ({ className }) => {
     [className]: !!className,
   });
 
+  const { t } = useTranslation('translation', { keyPrefix: 'buttons' });
   const [status, toggleTimerStatus, changeTimerMode] = useStatusPomodoro();
   const [, lap] = useControlPomodoro();
   const [resetTimer] = useResetPomodoro();
@@ -35,7 +37,7 @@ const PomodoroControls = ({ className }) => {
       primary
       onClick={toggleTimerStatus}
       icon={status.isTimerOn ? <PauseSVG /> : undefined}
-      value={status.isTimerOn ? 'pause' : undefined}
+      value={status.isTimerOn ? t('pause') : undefined}
     />
   );
 
@@ -45,7 +47,7 @@ const PomodoroControls = ({ className }) => {
         <div className={styles.PomodoroControls__mainBtn}>
           {PrimaryButton}
         </div>
-        <Button icon={<NextSVG />} value="next" onClick={setMode} />
+        <Button icon={<NextSVG />} value={t('next')} onClick={setMode} />
       </div>
       <PomodoroOptions className={styles.PomodoroControls__downBtns} disabled={status.isTimerOn} />
     </div>

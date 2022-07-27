@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Clock, CitiesList, AllCities } from 'pages/clock/components';
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
@@ -9,6 +10,7 @@ import styles from './ClockPage.module.scss';
 
 const ClockPage = () => {
   const [isOpenModal, setOpenModal] = useState(false);
+  const { t } = useTranslation('translation', { keyPrefix: 'buttons' });
 
   const onViewModal = () => setOpenModal((prevOpenModal) => !prevOpenModal);
 
@@ -16,7 +18,7 @@ const ClockPage = () => {
     <div className={styles.ClockPage}>
       <div className={styles.ClockPage__left}>
         <div className={styles.ClockPage__mainBtn}>
-          <Button primary icon={<AddSVG />} onClick={onViewModal} value="add" />
+          <Button primary icon={<AddSVG />} onClick={onViewModal} value={t('add')} />
         </div>
         <CitiesList />
       </div>

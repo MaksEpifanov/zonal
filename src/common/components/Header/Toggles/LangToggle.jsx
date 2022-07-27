@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import i18next from 'i18next';
 import useLang from 'common/hooks/useLang';
 import { ReactComponent as LangSvgEN } from 'assets/icons/langEN.svg';
 import { ReactComponent as LangSvgRU } from 'assets/icons/langRU.svg';
@@ -9,6 +10,7 @@ const LangToggle = ({ className }) => {
 
   useEffect(() => {
     document.documentElement.lang = lang;
+    i18next.changeLanguage(lang);
   }, [lang]);
 
   return (
