@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as ArrowSVG } from 'assets/icons/arrow.svg';
@@ -11,6 +12,7 @@ import styles from './Todos.module.scss';
 const AddTodoField = ({ className }) => {
   const classNames = `${styles.AddTodo} ${className}`;
 
+  const { t } = useTranslation();
   const [todos, addTodo] = useTodos();
   const [activeList] = useActiveLists();
 
@@ -26,7 +28,7 @@ const AddTodoField = ({ className }) => {
   return (
     <TextInput
       className={classNames}
-      placeholder="Click to add task"
+      placeholder={t('todo.input_task')}
       submitButton={<ArrowSVG />}
       onSubmit={onSubmit}
     />

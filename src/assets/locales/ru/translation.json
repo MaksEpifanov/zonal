@@ -17,13 +17,19 @@
     "sound_off": "звук выкл."
   },
   "stopwatch": {
-    "interval": "интервал",
-    "total": "всего"
+    "interval": "Интервал",
+    "total": "Всего"
   },
   "pomodoro": {
     "time_to": "Время",
     "focus": "работы",
     "short_break": "Короткий перерыв",
     "long_break": "Длинный перерыв"
+  },
+  "todo": {
+    "lists": "Категории",
+    "example": "Пример задачи",
+    "input_list": "Введите новую категорию",
+    "input_task": "Введите новую задачу"
   }
 }

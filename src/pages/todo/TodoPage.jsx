@@ -20,7 +20,7 @@ const TodoPage = () => {
       <Todos className={styles.TodoPage__todos} />
 
       <div className={styles.TodoPage__openBtn}>
-        <Button primary onClick={onViewModal} icon={<MenuSVG />} value="View" />
+        <Button primary onClick={onViewModal} icon={<MenuSVG />} />
       </div>
 
       <Modal

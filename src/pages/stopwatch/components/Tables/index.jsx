@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { formatTime } from 'pages/stopwatch/utils';
@@ -6,11 +7,13 @@ import { formatTime } from 'pages/stopwatch/utils';
 import styles from './Tables.module.scss';
 
 const Tables = ({ data }) => {
+  const { t } = useTranslation();
+
   const columns = useMemo(() => ([
     { title: '№' },
-    { title: 'Interval' },
-    { title: 'Total' },
-  ]), []);
+    { title: t('stopwatch.interval') },
+    { title: t('stopwatch.total') },
+  ]), [t]);
 
   const thead = (
     <thead>

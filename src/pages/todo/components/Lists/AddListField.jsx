@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { ReactComponent as AddSVG } from 'assets/icons/add.svg';
@@ -9,6 +10,7 @@ import useLists from 'pages/todo/hooks/useLists';
 import styles from './Lists.module.scss';
 
 const AddListField = ({ className }) => {
+  const { t } = useTranslation();
   const [hiddenInput, setHiddenInput] = useState(true);
   const [lists, addList] = useLists();
 
@@ -26,7 +28,7 @@ const AddListField = ({ className }) => {
     if (hiddenInput) {
       return (
         <>
-          <h3 className={styles['input-field__title']}>Lists</h3>
+          <h3 className={styles['input-field__title']}>{t('todo.lists')}</h3>
           <AddSVG
             className={styles['input-field__addBtn']}
             onClick={() => setHiddenInput((prevState) => !prevState)}
@@ -36,7 +38,7 @@ const AddListField = ({ className }) => {
     }
     return (
       <TextInput
-        placeholder="Input new list"
+        placeholder={t('todo.input_list')}
         onSubmit={onSubmit}
         submitButton={<AddSVG />}
         onEmptySubmit={() => setHiddenInput((prevState) => !prevState)}

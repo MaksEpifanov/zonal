@@ -17,13 +17,19 @@
     "sound_off": "sound off"
   },
   "stopwatch": {
-    "interval": "interval",
-    "total": "total"
+    "interval": "Interval",
+    "total": "Total"
   },
   "pomodoro": {
     "time_to": "Time to",
     "focus": "focus",
     "short_break": "Short break",
     "long_break": "Long break"
+  },
+  "todo": {
+    "lists": "Lists",
+    "example": "Example task",
+    "input_list": "Input new list",
+    "input_task": "Input new task"
   }
 }

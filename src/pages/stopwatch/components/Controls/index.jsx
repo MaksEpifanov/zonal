@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import classNamesBind from 'classnames/bind';
 
@@ -18,6 +19,7 @@ const Controls = ({ className }) => {
     [className]: !!className,
   });
 
+  const { t } = useTranslation();
   const [info, startStopwatch, splitStopwatch, resetStopwatch] = useControlsStopwatch();
 
   const primaryButton = (
@@ -25,7 +27,7 @@ const Controls = ({ className }) => {
       primary
       onClick={startStopwatch}
       icon={info.isStart ? <PauseSVG /> : undefined}
-      value={info.isStart ? 'pause' : undefined}
+      value={info.isStart ? t('buttons.pause') : undefined}
     />
   );
 
@@ -35,8 +37,8 @@ const Controls = ({ className }) => {
         {primaryButton}
       </div>
       <div className={styles.Controls__subControls}>
-        <Button icon={<SplitSVG />} onClick={splitStopwatch} value="split" disabled={info.isReset} />
-        <Button icon={<ResetSVG />} onClick={resetStopwatch} value="reset" disabled={info.isReset} />
+        <Button icon={<SplitSVG />} onClick={splitStopwatch} value={t('buttons.split')} disabled={info.isReset} />
+        <Button icon={<ResetSVG />} onClick={resetStopwatch} value={t('buttons.reset')} disabled={info.isReset} />
       </div>
     </div>
   );
