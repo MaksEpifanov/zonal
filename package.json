@@ -2,8 +2,10 @@
   "name": "zonal",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MaksEpifanov.github.io/zonal/",
   "dependencies": {
     "classnames": "^2.3.1",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.14",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.1",
@@ -16,6 +18,8 @@
     "sass": "^1.52.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
