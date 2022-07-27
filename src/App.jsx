@@ -9,7 +9,7 @@ import './App.scss';
 
 const App = () => (
   <Routes>
-    <Route path="/zonal" element={<Layout />}>
+    <Route path="/" element={<Layout />}>
       <Route index element={<ClockPage />} />
       <Route path="stopwatch" element={<StopwatchPage />} />
       <Route path="pomodoro" element={<PomodoroPage />} />
