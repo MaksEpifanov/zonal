@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "clock": "Clock",
+    "stopwatch": "Stopwatch",
+    "pomodoro": "Pomodoro",
+    "todo": "To Do"
+  },
+  "buttons": {
+    "add": "add",
+    "start": "start",
+    "reset": "reset",
+    "split": "split",
+    "next": "next",
+    "options": "options"
+  },
+  "stopwatch": {
+    "interval": "interval",
+    "total": "total"
+  },
+  "pomodoro": {
+    "time_to": "Time to",
+    "focus": "focus",
+    "short_break": "short break",
+    "long_break": "long break",
+    "time": "time"
+  }
+}

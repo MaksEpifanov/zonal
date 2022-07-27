@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "clock": "Часы",
+    "stopwatch": "Секундомер",
+    "pomodoro": "Помидора",
+    "todo": "Список дел"
+  },
+  "buttons": {
+    "add": "добавить",
+    "start": "старт",
+    "reset": "сброс",
+    "split": "круг",
+    "next": "дальше",
+    "options": "настройки"
+  },
+  "stopwatch": {
+    "interval": "интервал",
+    "total": "всего"
+  },
+  "pomodoro": {
+    "time_to": "Время",
+    "focus": "работы",
+    "short_break": "короткого перерыва",
+    "long_break": "длинного перерыва",
+    "time": "время"
+  }
+}
