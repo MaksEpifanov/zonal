@@ -1,7 +1,7 @@
 const initialState = {
   common: {
     theme: 'light',
-    lang: 'ru',
+    lang: 'en',
   },
   clock: {
     activeCity: {

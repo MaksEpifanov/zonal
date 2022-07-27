@@ -12,7 +12,10 @@ const reducer = (state, action) => {
     case 'TOGGLE_LANG': {
       return {
         ...state,
-        lang: state.common.lang === 'ru' ? 'en' : 'ru',
+        common: {
+          ...state.common,
+          lang: state.common.lang === 'ru' ? 'en' : 'ru',
+        },
       };
     }
     default: return state;
