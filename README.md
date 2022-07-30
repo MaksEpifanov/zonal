@@ -38,6 +38,13 @@ Zonal - SPA состоящее из нескольких частей (дале�
 ## Overview
 
 ### Screenshots
+<p align=center>Desktop version</p>
+
+![zonal-screenshots](./screenshots/zonal.gif)
+
+<p align=center>Mobile version</p>
+
+![zonal-screenshots-mb](./screenshots/zonal-mb.gif)
 
 ### Links
 
