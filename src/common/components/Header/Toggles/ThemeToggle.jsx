@@ -13,7 +13,7 @@ const ThemeToggle = ({ className }) => {
 
   return (
     <button type="button" className={className} onClick={setTheme}>
-      {theme === 'light' ? <ThemeSvgLight /> : <ThemeSvgDark /> }
+      {theme === 'dark' ? <ThemeSvgLight /> : <ThemeSvgDark /> }
     </button>
   );
 };
