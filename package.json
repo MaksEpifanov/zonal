@@ -80,8 +80,8 @@
     ]
   },
   "author": {
-    "name": "Maks Klimov",
-    "email": "maksklimovbr@gmail.com"
+    "name": "Maks Epifanov",
+    "email": "maksepifanovbr@gmail.com"
   },
   "license": "MIT",
   "keywords": [
@@ -92,7 +92,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/MaksKlimov/zonal"
+    "url": "https://github.com/MaksEpifanov/zonal"
   },
   "devDependencies": {
     "eslint": "^8.18.0",
